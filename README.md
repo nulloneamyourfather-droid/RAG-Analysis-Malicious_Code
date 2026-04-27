@@ -1,3 +1,37 @@
+# Malware Static Analysis Graduation Project
+
+核心内容是：
+
+- [attck_knowledge/README.md](/d:/Graduation%20project/Midterm/asm/attck_knowledge/README.md)
+- [attck_knowledge/docs/design/TECHNICAL_ROUTE_SYSTEM_DESIGN.md](/d:/Graduation%20project/Midterm/asm/attck_knowledge/docs/design/TECHNICAL_ROUTE_SYSTEM_DESIGN.md)
+
+## Keep
+
+- `attck_knowledge/`
+  - 核心代码、测试、正式数据结构、样例输出
+
+
+## Ignore
+
+- `__pycache__/`、`.pyc`
+- `attck_knowledge/data/index/faiss/`
+  - 本地可重建索引
+- `attck_knowledge/data/index/metadata/latest_*`
+  - 运行期最新结果，可重建
+
+## Recommended Git Entry Points
+
+- 项目主说明：
+  - [attck_knowledge/README.md](/d:/Graduation%20project/Midterm/asm/attck_knowledge/README.md)
+- 一键样本分析：
+  - [run_sample_pipeline.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/run_sample_pipeline.py)
+- 实验脚本：
+  - [experiment_runner.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/experiment_runner.py)
+- 清理脚本：
+  - [attck_knowledge/tools/cleanup_locked_legacy.ps1](/d:/Graduation%20project/Midterm/asm/attck_knowledge/tools/cleanup_locked_legacy.ps1)
+
+
+
 # attck_knowledge
 
 `attck_knowledge` 是当前毕业设计中负责知识构建、检索增强分析、样本级聚合与报告输出的核心模块。它围绕 `IDA-MCP + ATT&CK + API_CHAIN + IDA_SEMANTIC + RAG` 这条链路工作，目标是把 IDA 当前正在分析的样本转换为结构化证据、能力链和样本级分析报告。
