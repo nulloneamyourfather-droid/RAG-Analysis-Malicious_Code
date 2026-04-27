@@ -1,0 +1,521 @@
+[
+  {
+    "behavior_id": "behavior::process_injection::001",
+    "behavior_name": "Process Injection",
+    "category": "Process Control",
+    "platform": "Windows",
+    "required_apis": [
+      "OpenProcess",
+      "WriteProcessMemory"
+    ],
+    "optional_apis": [
+      "VirtualAllocEx",
+      "CreateRemoteThread"
+    ],
+    "negative_signals": [],
+    "api_sequence_examples": [
+      [
+        "OpenProcess",
+        "VirtualAllocEx",
+        "WriteProcessMemory",
+        "CreateRemoteThread"
+      ]
+    ],
+    "api_details": [
+      {
+        "api_name": "OpenProcess",
+        "api_desc": "Open a target process and obtain a handle."
+      },
+      {
+        "api_name": "WriteProcessMemory",
+        "api_desc": "Write bytes into another process."
+      },
+      {
+        "api_name": "VirtualAllocEx",
+        "api_desc": "Allocate memory inside another process."
+      },
+      {
+        "api_name": "CreateRemoteThread",
+        "api_desc": "Start execution in another process by creating a remote thread."
+      }
+    ],
+    "semantic_description": "The function opens a remote process, writes content into remote memory, and triggers execution in that process.",
+    "malicious_purpose": "Often used for stealthy code execution, payload staging, privilege escalation, or evasion.",
+    "evidence_template": "Evidence typically includes remote process access plus memory write and remote execution APIs.",
+    "attack_mapping": [
+      {
+        "attack_id": "T1055",
+        "attack_name": "Process Injection"
+      }
+    ],
+    "variant_note": "Variants may replace CreateRemoteThread with APC or NtCreateThreadEx.",
+    "risk_level": "high",
+    "attack_ids": [
+      "T1055"
+    ],
+    "keywords": [
+      "OpenProcess",
+      "WriteProcessMemory",
+      "VirtualAllocEx",
+      "CreateRemoteThread",
+      "T1055",
+      "Process Injection",
+      "Process Control"
+    ]
+  },
+  {
+    "behavior_id": "behavior::registry_persistence::001",
+    "behavior_name": "Registry Persistence",
+    "category": "Persistence",
+    "platform": "Windows",
+    "required_apis": [
+      "RegOpenKeyEx",
+      "RegSetValueEx"
+    ],
+    "optional_apis": [
+      "RegCreateKeyEx"
+    ],
+    "negative_signals": [],
+    "api_sequence_examples": [
+      [
+        "RegOpenKeyEx",
+        "RegSetValueEx"
+      ]
+    ],
+    "api_details": [
+      {
+        "api_name": "RegOpenKeyEx",
+        "api_desc": "Open a registry key."
+      },
+      {
+        "api_name": "RegSetValueEx",
+        "api_desc": "Write a registry value."
+      },
+      {
+        "api_name": "RegCreateKeyEx",
+        "api_desc": "Create or open a registry key."
+      }
+    ],
+    "semantic_description": "The function edits autorun-related registry keys so a payload can execute automatically on boot or user logon.",
+    "malicious_purpose": "Used to maintain persistence after system restart.",
+    "evidence_template": "Evidence includes access to Run/RunOnce or similar startup-related registry paths.",
+    "attack_mapping": [
+      {
+        "attack_id": "T1547",
+        "attack_name": "Boot or Logon Autostart Execution"
+      }
+    ],
+    "variant_note": "Common targets include HKCU/HKLM Run and RunOnce paths.",
+    "risk_level": "high",
+    "attack_ids": [
+      "T1547"
+    ],
+    "keywords": [
+      "RegOpenKeyEx",
+      "RegSetValueEx",
+      "RegCreateKeyEx",
+      "T1547",
+      "Registry Persistence",
+      "Persistence"
+    ]
+  },
+  {
+    "behavior_id": "behavior::download_execute::001",
+    "behavior_name": "Download and Execute",
+    "category": "Network Communication",
+    "platform": "Windows",
+    "required_apis": [
+      "CreateProcess"
+    ],
+    "optional_apis": [
+      "InternetOpen",
+      "InternetConnect",
+      "HttpOpenRequest",
+      "HttpSendRequest",
+      "URLDownloadToFile"
+    ],
+    "negative_signals": [],
+    "api_sequence_examples": [
+      [
+        "InternetOpen",
+        "InternetConnect",
+        "HttpOpenRequest",
+        "HttpSendRequest",
+        "URLDownloadToFile",
+        "CreateProcess"
+      ]
+    ],
+    "api_details": [
+      {
+        "api_name": "CreateProcess",
+        "api_desc": "Create a new process."
+      },
+      {
+        "api_name": "InternetOpen",
+        "api_desc": "Initialize a WinINet session."
+      },
+      {
+        "api_name": "InternetConnect",
+        "api_desc": "Connect to a remote server via WinINet."
+      },
+      {
+        "api_name": "HttpOpenRequest",
+        "api_desc": "Prepare an HTTP request handle."
+      },
+      {
+        "api_name": "HttpSendRequest",
+        "api_desc": "Send an HTTP request."
+      },
+      {
+        "api_name": "URLDownloadToFile",
+        "api_desc": "Download a remote resource to a local file."
+      }
+    ],
+    "semantic_description": "The function establishes a network connection, downloads a payload, and launches it.",
+    "malicious_purpose": "Used by droppers and staged malware payload delivery chains.",
+    "evidence_template": "Look for a network download primitive followed by process creation on the downloaded file.",
+    "attack_mapping": [
+      {
+        "attack_id": "T1105",
+        "attack_name": "Ingress Tool Transfer"
+      }
+    ],
+    "variant_note": "Some samples use WinHTTP or raw sockets instead of WinINet.",
+    "risk_level": "high",
+    "attack_ids": [
+      "T1105"
+    ],
+    "keywords": [
+      "CreateProcess",
+      "InternetOpen",
+      "InternetConnect",
+      "HttpOpenRequest",
+      "HttpSendRequest",
+      "URLDownloadToFile",
+      "T1105",
+      "Download and Execute",
+      "Network Communication"
+    ]
+  },
+  {
+    "behavior_id": "behavior::c2_communication::001",
+    "behavior_name": "Command and Control Communication",
+    "category": "Network Communication",
+    "platform": "Windows",
+    "required_apis": [
+      "socket",
+      "connect"
+    ],
+    "optional_apis": [
+      "send",
+      "recv"
+    ],
+    "negative_signals": [],
+    "api_sequence_examples": [
+      [
+        "socket",
+        "connect",
+        "send",
+        "recv"
+      ]
+    ],
+    "api_details": [
+      {
+        "api_name": "socket",
+        "api_desc": "Create a socket endpoint."
+      },
+      {
+        "api_name": "connect",
+        "api_desc": "Connect a socket to a remote host."
+      },
+      {
+        "api_name": "send",
+        "api_desc": "Send data over a socket."
+      },
+      {
+        "api_name": "recv",
+        "api_desc": "Receive data from a socket."
+      }
+    ],
+    "semantic_description": "The function creates a socket, connects to a remote endpoint, and exchanges data.",
+    "malicious_purpose": "Used for remote command execution, tasking, and data exfiltration.",
+    "evidence_template": "Evidence includes persistent socket communication with bidirectional data exchange.",
+    "attack_mapping": [
+      {
+        "attack_id": "T1071",
+        "attack_name": "Application Layer Protocol"
+      }
+    ],
+    "variant_note": "Protocol details may require strings, packet formats, or decryption analysis.",
+    "risk_level": "medium",
+    "attack_ids": [
+      "T1071"
+    ],
+    "keywords": [
+      "socket",
+      "connect",
+      "send",
+      "recv",
+      "T1071",
+      "Command and Control Communication",
+      "Network Communication"
+    ]
+  },
+  {
+    "behavior_id": "behavior::keylogging::001",
+    "behavior_name": "Input Capture",
+    "category": "Credential Access",
+    "platform": "Windows",
+    "required_apis": [],
+    "optional_apis": [
+      "SetWindowsHookEx",
+      "GetAsyncKeyState",
+      "GetForegroundWindow",
+      "GetWindowText"
+    ],
+    "negative_signals": [],
+    "api_sequence_examples": [
+      [
+        "SetWindowsHookEx",
+        "GetForegroundWindow",
+        "GetWindowText"
+      ],
+      [
+        "GetAsyncKeyState",
+        "GetForegroundWindow",
+        "GetWindowText"
+      ]
+    ],
+    "api_details": [
+      {
+        "api_name": "SetWindowsHookEx",
+        "api_desc": "Install a Windows hook procedure."
+      },
+      {
+        "api_name": "GetAsyncKeyState",
+        "api_desc": "Check keyboard state for a key."
+      },
+      {
+        "api_name": "GetForegroundWindow",
+        "api_desc": "Get the current foreground window."
+      },
+      {
+        "api_name": "GetWindowText",
+        "api_desc": "Read the window title text."
+      }
+    ],
+    "semantic_description": "The function monitors keyboard activity and may capture the active window context.",
+    "malicious_purpose": "Used to steal credentials and monitor user input.",
+    "evidence_template": "Evidence often includes keyboard APIs combined with active window title collection.",
+    "attack_mapping": [
+      {
+        "attack_id": "T1056",
+        "attack_name": "Input Capture"
+      }
+    ],
+    "variant_note": "Polling-based keyloggers may not install hooks.",
+    "risk_level": "high",
+    "attack_ids": [
+      "T1056"
+    ],
+    "keywords": [
+      "SetWindowsHookEx",
+      "GetAsyncKeyState",
+      "GetForegroundWindow",
+      "GetWindowText",
+      "T1056",
+      "Input Capture",
+      "Credential Access"
+    ]
+  },
+  {
+    "behavior_id": "behavior::env_discovery::001",
+    "behavior_name": "System Information Discovery",
+    "category": "Discovery",
+    "platform": "Windows",
+    "required_apis": [],
+    "optional_apis": [
+      "GetComputerName",
+      "GetUserName",
+      "GetVersionEx",
+      "GetAdaptersInfo",
+      "GetLogicalDrives"
+    ],
+    "negative_signals": [],
+    "api_sequence_examples": [
+      [
+        "GetComputerName",
+        "GetUserName",
+        "GetVersionEx",
+        "GetAdaptersInfo"
+      ]
+    ],
+    "api_details": [
+      {
+        "api_name": "GetComputerName",
+        "api_desc": "Get the system hostname."
+      },
+      {
+        "api_name": "GetUserName",
+        "api_desc": "Get the current user name."
+      },
+      {
+        "api_name": "GetVersionEx",
+        "api_desc": "Get operating system version information."
+      },
+      {
+        "api_name": "GetAdaptersInfo",
+        "api_desc": "Get network adapter information."
+      },
+      {
+        "api_name": "GetLogicalDrives",
+        "api_desc": "Get available drive letters."
+      }
+    ],
+    "semantic_description": "The function collects host, user, OS, network, and storage environment details.",
+    "malicious_purpose": "Used to fingerprint the environment and guide follow-up behavior.",
+    "evidence_template": "Evidence includes clustered host and network enumeration APIs.",
+    "attack_mapping": [
+      {
+        "attack_id": "T1082",
+        "attack_name": "System Information Discovery"
+      }
+    ],
+    "variant_note": "Some malware also collects locale, domain, or process list details.",
+    "risk_level": "medium",
+    "attack_ids": [
+      "T1082"
+    ],
+    "keywords": [
+      "GetComputerName",
+      "GetUserName",
+      "GetVersionEx",
+      "GetAdaptersInfo",
+      "GetLogicalDrives",
+      "T1082",
+      "System Information Discovery",
+      "Discovery"
+    ]
+  },
+  {
+    "behavior_id": "behavior::file_encryption::001",
+    "behavior_name": "Bulk File Processing for Encryption",
+    "category": "Impact",
+    "platform": "Windows",
+    "required_apis": [
+      "CreateFile",
+      "ReadFile",
+      "WriteFile"
+    ],
+    "optional_apis": [
+      "FindFirstFile",
+      "FindNextFile"
+    ],
+    "negative_signals": [],
+    "api_sequence_examples": [
+      [
+        "FindFirstFile",
+        "FindNextFile",
+        "CreateFile",
+        "ReadFile",
+        "WriteFile"
+      ]
+    ],
+    "api_details": [
+      {
+        "api_name": "CreateFile",
+        "api_desc": "Create or open a file, device, or named pipe."
+      },
+      {
+        "api_name": "ReadFile",
+        "api_desc": "Read bytes from a file or device."
+      },
+      {
+        "api_name": "WriteFile",
+        "api_desc": "Write bytes into a file or device."
+      },
+      {
+        "api_name": "FindFirstFile",
+        "api_desc": "Start enumerating files in a directory."
+      },
+      {
+        "api_name": "FindNextFile",
+        "api_desc": "Continue enumerating files in a directory."
+      }
+    ],
+    "semantic_description": "The function enumerates files and performs repeated read and write operations on them.",
+    "malicious_purpose": "Common in ransomware pre-encryption workflows and bulk file tampering.",
+    "evidence_template": "Evidence requires directory traversal plus large-scale file access and overwrite patterns.",
+    "attack_mapping": [
+      {
+        "attack_id": "T1486",
+        "attack_name": "Data Encrypted for Impact"
+      }
+    ],
+    "variant_note": "Confirm real encryption behavior with crypto routines or extension renaming evidence.",
+    "risk_level": "high",
+    "attack_ids": [
+      "T1486"
+    ],
+    "keywords": [
+      "CreateFile",
+      "ReadFile",
+      "WriteFile",
+      "FindFirstFile",
+      "FindNextFile",
+      "T1486",
+      "Bulk File Processing for Encryption",
+      "Impact"
+    ]
+  },
+  {
+    "behavior_id": "behavior::service_persistence::001",
+    "behavior_name": "Service-Based Persistence",
+    "category": "Persistence",
+    "platform": "Windows",
+    "required_apis": [
+      "CreateService"
+    ],
+    "optional_apis": [
+      "StartService"
+    ],
+    "negative_signals": [],
+    "api_sequence_examples": [
+      [
+        "CreateService",
+        "StartService"
+      ]
+    ],
+    "api_details": [
+      {
+        "api_name": "CreateService",
+        "api_desc": "Create a Windows service entry."
+      },
+      {
+        "api_name": "StartService",
+        "api_desc": "Start a Windows service."
+      }
+    ],
+    "semantic_description": "The function registers a Windows service and may start it immediately.",
+    "malicious_purpose": "Used for persistence and privileged background execution.",
+    "evidence_template": "Evidence includes SCM operations creating or enabling a service.",
+    "attack_mapping": [
+      {
+        "attack_id": "T1543",
+        "attack_name": "Create or Modify System Process"
+      }
+    ],
+    "variant_note": "Malware may also pair this with registry edits or dropped service binaries.",
+    "risk_level": "high",
+    "attack_ids": [
+      "T1543"
+    ],
+    "keywords": [
+      "CreateService",
+      "StartService",
+      "T1543",
+      "Service-Based Persistence",
+      "Persistence"
+    ]
+  }
+]
