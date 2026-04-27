@@ -2,8 +2,8 @@
 
 核心内容是：
 
-- [attck_knowledge/README.md](/d:/Graduation%20project/Midterm/asm/attck_knowledge/README.md)
-- [attck_knowledge/docs/design/TECHNICAL_ROUTE_SYSTEM_DESIGN.md](/d:/Graduation%20project/Midterm/asm/attck_knowledge/docs/design/TECHNICAL_ROUTE_SYSTEM_DESIGN.md)
+- [attck_knowledge/README.md](/attck_knowledge/README.md)
+- [attck_knowledge/docs/design/TECHNICAL_ROUTE_SYSTEM_DESIGN.md](/attck_knowledge/docs/design/TECHNICAL_ROUTE_SYSTEM_DESIGN.md)
 
 ## Keep
 
@@ -22,19 +22,19 @@
 ## Recommended Git Entry Points
 
 - 项目主说明：
-  - [attck_knowledge/README.md](/d:/Graduation%20project/Midterm/asm/attck_knowledge/README.md)
+  - [attck_knowledge/README.md](/attck_knowledge/README.md)
 - 一键样本分析：
-  - [run_sample_pipeline.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/run_sample_pipeline.py)
+  - [run_sample_pipeline.py](/attck_knowledge/run_sample_pipeline.py)
 - 实验脚本：
-  - [experiment_runner.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/experiment_runner.py)
+  - [experiment_runner.py](/attck_knowledge/experiment_runner.py)
 - 清理脚本：
-  - [attck_knowledge/tools/cleanup_locked_legacy.ps1](/d:/Graduation%20project/Midterm/asm/attck_knowledge/tools/cleanup_locked_legacy.ps1)
+  - [attck_knowledge/tools/cleanup_locked_legacy.ps1](/attck_knowledge/tools/cleanup_locked_legacy.ps1)
 
 
 
 # attck_knowledge
 
-`attck_knowledge` 是当前毕业设计中负责知识构建、检索增强分析、样本级聚合与报告输出的核心模块。它围绕 `IDA-MCP + ATT&CK + API_CHAIN + IDA_SEMANTIC + RAG` 这条链路工作，目标是把 IDA 当前正在分析的样本转换为结构化证据、能力链和样本级分析报告。
+`attck_knowledge` 负责知识构建、检索增强分析、样本级聚合与报告输出的核心模块。它围绕 `IDA-MCP + ATT&CK + API_CHAIN + IDA_SEMANTIC + RAG` 这条链路工作，目标是把 IDA 当前正在分析的样本转换为结构化证据、能力链和样本级分析报告。
 
 ## 1. 当前实现范围
 
@@ -103,41 +103,41 @@ attck_knowledge/
 ## 3. 模块说明
 
 ### 3.1 知识构建
-- [build_attack_kb.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/builders/build_attack_kb.py)：构建 ATT&CK 原始知识与 RAG 文档。
-- [build_api_chain_kb.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/builders/build_api_chain_kb.py)：构建 API 行为模板知识。
-- [build_ida_semantic_kb.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/builders/build_ida_semantic_kb.py)：把导出的函数事实整理为 `raw` 和 `rag` 两层数据。
+- [build_attack_kb.py](/attck_knowledge/builders/build_attack_kb.py)：构建 ATT&CK 原始知识与 RAG 文档。
+- [build_api_chain_kb.py](/attck_knowledge/builders/build_api_chain_kb.py)：构建 API 行为模板知识。
+- [build_ida_semantic_kb.py](/attck_knowledge/builders/build_ida_semantic_kb.py)：把导出的函数事实整理为 `raw` 和 `rag` 两层数据。
 
 ### 3.2 IDA / MCP 导出
-- [export_ida_semantic_from_mcp.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/builders/export_ida_semantic_from_mcp.py)：从 IDA-MCP 导出当前样本的函数语义、API、字符串、调用关系等信息。
-- [select_high_value_functions.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/select_high_value_functions.py)：对当前样本函数进行质量评分，优先筛掉 thunk/runtime 噪声，并生成高价值函数列表。
+- [export_ida_semantic_from_mcp.py](/attck_knowledge/builders/export_ida_semantic_from_mcp.py)：从 IDA-MCP 导出当前样本的函数语义、API、字符串、调用关系等信息。
+- [select_high_value_functions.py](/attck_knowledge/select_high_value_functions.py)：对当前样本函数进行质量评分，优先筛掉 thunk/runtime 噪声，并生成高价值函数列表。
 
 ### 3.3 查询构造、重排与生成
-- [query_constructor.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/query_constructor.py)：把函数语义、API、字符串等信息整理为检索查询包。
-- [rag_index.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/rag_index.py)：封装 RAG 文档加载、向量索引构建与检索接口。
-- [reranker.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/reranker.py)：对多源召回结果做规则化重排与 ATT&CK 候选融合。
-- [generator.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/generator.py)：把 evidence 组织成可供解释或继续交给 LLM 的生成载荷。
+- [query_constructor.py](/attck_knowledge/query_constructor.py)：把函数语义、API、字符串等信息整理为检索查询包。
+- [rag_index.py](/attck_knowledge/rag_index.py)：封装 RAG 文档加载、向量索引构建与检索接口。
+- [reranker.py](/attck_knowledge/reranker.py)：对多源召回结果做规则化重排与 ATT&CK 候选融合。
+- [generator.py](/attck_knowledge/generator.py)：把 evidence 组织成可供解释或继续交给 LLM 的生成载荷。
 
 ### 3.4 函数级与样本级分析
-- [run_function_rag_demo.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/run_function_rag_demo.py)：执行函数级检索、重排、evidence 生成。
-- [analyze_function_evidence.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/analyze_function_evidence.py)：根据函数级 evidence 给出是否可疑、是否像 runtime/helper 的判断。
-- [aggregate_sample_analysis.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/aggregate_sample_analysis.py)：把多个函数的 evidence 和分析结果聚合成样本级结论。
-- [capability_chain.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/capability_chain.py)：生成能力链、阶段命名、摘要和证据解释。
-- [reporting_v2.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/reporting_v2.py)：输出技术版报告和论文版报告。
+- [run_function_rag_demo.py](/attck_knowledge/run_function_rag_demo.py)：执行函数级检索、重排、evidence 生成。
+- [analyze_function_evidence.py](/attck_knowledge/analyze_function_evidence.py)：根据函数级 evidence 给出是否可疑、是否像 runtime/helper 的判断。
+- [aggregate_sample_analysis.py](/attck_knowledge/aggregate_sample_analysis.py)：把多个函数的 evidence 和分析结果聚合成样本级结论。
+- [capability_chain.py](/attck_knowledge/capability_chain.py)：生成能力链、阶段命名、摘要和证据解释。
+- [reporting_v2.py](/attck_knowledge/reporting_v2.py)：输出技术版报告和论文版报告。
 
 ### 3.5 主入口
-- [run_sample_pipeline.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/run_sample_pipeline.py)：项目主入口，当前是一个极简壳文件。
-- [run_sample_pipeline_impl.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/run_sample_pipeline_impl.py)：真实的一键分析实现。
+- [run_sample_pipeline.py](/attck_knowledge/run_sample_pipeline.py)：项目主入口，当前是一个极简壳文件。
+- [run_sample_pipeline_impl.py](/attck_knowledge/run_sample_pipeline_impl.py)：真实的一键分析实现。
 
 ### 3.6 实验脚本
-- [experiment_runner.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/experiment_runner.py)：用于支撑论文实验章节，包括：
+- [experiment_runner.py](/attck_knowledge/experiment_runner.py)：用于支撑论文实验章节，包括：
   - 有无 RAG 对比
   - 不同知识源组合对比
   - 不同分片策略对比
 
 ### 3.7 文档与维护脚本
-- [docs/README.md](/d:/Graduation%20project/Midterm/asm/attck_knowledge/docs/README.md)：文档目录总说明。
-- [docs/design](/d:/Graduation%20project/Midterm/asm/attck_knowledge/docs/design)：技术路线和数据重构设计文档。
-- [docs/maintenance](/d:/Graduation%20project/Midterm/asm/attck_knowledge/docs/maintenance)：项目状态检查、工作区审计和维护记录。
+- [docs/README.md](/attck_knowledge/docs/README.md)：文档目录总说明。
+- [docs/design](/attck_knowledge/docs/design)：技术路线和数据重构设计文档。
+- [docs/maintenance](/attck_knowledge/docs/maintenance)：项目状态检查、工作区审计和维护记录。
 重复 Markdown、`__pycache__`、嵌套 `.git/.vs` 等遗留物。
 
 ## 4. 数据分层
@@ -197,34 +197,34 @@ Remove-Item attck_knowledge\schemas\ida_semantic_knowledge_for_rag.jsonl
 
 ## 5. 向量索引位置
 
-当前真实存在的索引文件位于 [data/index/faiss](/d:/Graduation%20project/Midterm/asm/attck_knowledge/data/index/faiss)：
+当前真实存在的索引文件位于 [data/index/faiss](/attck_knowledge/data/index/faiss)：
 
-- [rag_docs.json](/d:/Graduation%20project/Midterm/asm/attck_knowledge/data/index/faiss/rag_docs.json)
-- [rag_index_metadata.json](/d:/Graduation%20project/Midterm/asm/attck_knowledge/data/index/faiss/rag_index_metadata.json)
-- [semantic_embeddings.npy](/d:/Graduation%20project/Midterm/asm/attck_knowledge/data/index/faiss/semantic_embeddings.npy)
-- [semantic_faiss.index](/d:/Graduation%20project/Midterm/asm/attck_knowledge/data/index/faiss/semantic_faiss.index)
-- [tfidf_matrix.npz](/d:/Graduation%20project/Midterm/asm/attck_knowledge/data/index/faiss/tfidf_matrix.npz)
-- [tfidf_vectorizer.joblib](/d:/Graduation%20project/Midterm/asm/attck_knowledge/data/index/faiss/tfidf_vectorizer.joblib)
+- [rag_docs.json](/attck_knowledge/data/index/faiss/rag_docs.json)
+- [rag_index_metadata.json](/attck_knowledge/data/index/faiss/rag_index_metadata.json)
+- [semantic_embeddings.npy](/attck_knowledge/data/index/faiss/semantic_embeddings.npy)
+- [semantic_faiss.index](/attck_knowledge/data/index/faiss/semantic_faiss.index)
+- [tfidf_matrix.npz](/attck_knowledge/data/index/faiss/tfidf_matrix.npz)
+- [tfidf_vectorizer.joblib](/attck_knowledge/data/index/faiss/tfidf_vectorizer.joblib)
 
 也就是说，当前项目已经有实际落盘的本地 RAG 索引，不再只是 JSONL 文档。
 
 ## 6. 主要输出文件
 
-函数级和样本级分析产物位于 [data/index/metadata](/d:/Graduation%20project/Midterm/asm/attck_knowledge/data/index/metadata)：
+函数级和样本级分析产物位于 [data/index/metadata](/attck_knowledge/data/index/metadata)：
 
-- [latest_function_evidence.json](/d:/Graduation%20project/Midterm/asm/attck_knowledge/data/index/metadata/latest_function_evidence.json)
-- [latest_function_analysis.json](/d:/Graduation%20project/Midterm/asm/attck_knowledge/data/index/metadata/latest_function_analysis.json)
-- [latest_sample_analysis.json](/d:/Graduation%20project/Midterm/asm/attck_knowledge/data/index/metadata/latest_sample_analysis.json)
-- [latest_capability_chains.json](/d:/Graduation%20project/Midterm/asm/attck_knowledge/data/index/metadata/latest_capability_chains.json)
-- [latest_sample_report.md](/d:/Graduation%20project/Midterm/asm/attck_knowledge/data/index/metadata/latest_sample_report.md)
-- [latest_sample_report_paper.md](/d:/Graduation%20project/Midterm/asm/attck_knowledge/data/index/metadata/latest_sample_report_paper.md)
+- [latest_function_evidence.json](/attck_knowledge/data/index/metadata/latest_function_evidence.json)
+- [latest_function_analysis.json](/attck_knowledge/data/index/metadata/latest_function_analysis.json)
+- [latest_sample_analysis.json](/attck_knowledge/data/index/metadata/latest_sample_analysis.json)
+- [latest_capability_chains.json](/attck_knowledge/data/index/metadata/latest_capability_chains.json)
+- [latest_sample_report.md](/attck_knowledge/data/index/metadata/latest_sample_report.md)
+- [latest_sample_report_paper.md](/attck_knowledge/data/index/metadata/latest_sample_report_paper.md)
 
-实验输出位于 [data/index/metadata/experiments](/d:/Graduation%20project/Midterm/asm/attck_knowledge/data/index/metadata/experiments)：
+实验输出位于 [data/index/metadata/experiments](/attck_knowledge/data/index/metadata/experiments)：
 
-- [rag_vs_no_rag.json](/d:/Graduation%20project/Midterm/asm/attck_knowledge/data/index/metadata/experiments/rag_vs_no_rag.json)
-- [source_combinations.json](/d:/Graduation%20project/Midterm/asm/attck_knowledge/data/index/metadata/experiments/source_combinations.json)
-- [chunking_strategies.json](/d:/Graduation%20project/Midterm/asm/attck_knowledge/data/index/metadata/experiments/chunking_strategies.json)
-- [experiment_summary.md](/d:/Graduation%20project/Midterm/asm/attck_knowledge/data/index/metadata/experiments/experiment_summary.md)
+- [rag_vs_no_rag.json](/attck_knowledge/data/index/metadata/experiments/rag_vs_no_rag.json)
+- [source_combinations.json](/attck_knowledge/data/index/metadata/experiments/source_combinations.json)
+- [chunking_strategies.json](/attck_knowledge/data/index/metadata/experiments/chunking_strategies.json)
+- [experiment_summary.md](/attck_knowledge/data/index/metadata/experiments/experiment_summary.md)
 
 ## 7. 使用方式
 
