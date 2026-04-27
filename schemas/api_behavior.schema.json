@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "API Behavior Raw Record",
+  "type": "object",
+  "required": [
+    "behavior_id",
+    "behavior_name",
+    "category",
+    "platform",
+    "required_apis",
+    "optional_apis",
+    "negative_signals",
+    "api_sequence_examples",
+    "api_details",
+    "semantic_description",
+    "malicious_purpose",
+    "evidence_template",
+    "attack_mapping",
+    "variant_note",
+    "risk_level",
+    "attack_ids",
+    "keywords"
+  ],
+  "properties": {
+    "behavior_id": { "type": "string" },
+    "behavior_name": { "type": "string" },
+    "category": { "type": "string" },
+    "platform": { "type": "string" },
+    "required_apis": { "type": "array", "items": { "type": "string" } },
+    "optional_apis": { "type": "array", "items": { "type": "string" } },
+    "negative_signals": { "type": "array", "items": { "type": "string" } },
+    "api_sequence_examples": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    },
+    "api_details": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["api_name", "api_desc"],
+        "properties": {
+          "api_name": { "type": "string" },
+          "api_desc": { "type": "string" }
+        }
+      }
+    },
+    "semantic_description": { "type": "string" },
+    "malicious_purpose": { "type": "string" },
+    "evidence_template": { "type": "string" },
+    "attack_mapping": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["attack_id", "attack_name"],
+        "properties": {
+          "attack_id": { "type": "string" },
+          "attack_name": { "type": "string" }
+        }
+      }
+    },
+    "variant_note": { "type": "string" },
+    "risk_level": { "type": "string" },
+    "attack_ids": { "type": "array", "items": { "type": "string" } },
+    "keywords": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}
