@@ -1,6 +1,7 @@
 
 # Malware Static Analysis Graduation Project
 ## 环境默认配置好了IDA-MCP
+这里作者自己录制了教程：https://www.bilibili.com/video/BV1Rz8nz3Edp/?spm_id_from=333.1387.homepage.video_card.click&vd_source=87933a61c84325a77f7a2a6334dc6544
 
 核心内容是：
 
