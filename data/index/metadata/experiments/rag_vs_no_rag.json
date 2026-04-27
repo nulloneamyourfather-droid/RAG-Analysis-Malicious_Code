@@ -1,0 +1,35 @@
+{
+  "experiment": "rag_vs_no_rag",
+  "sample_name": "1.bin",
+  "settings": {
+    "top_k": 3,
+    "function_limit": 5,
+    "backend": "semantic"
+  },
+  "results": [
+    {
+      "label": "with_rag",
+      "function_count": 5,
+      "suspicious_count": 5,
+      "runtime_like_count": 0,
+      "candidate_attack_total": 30,
+      "attack_doc_hit_count": 5,
+      "api_chain_hit_count": 5,
+      "similar_func_hit_count": 5,
+      "avg_candidate_attack_count": 6.0,
+      "avg_evidence_lines": 4.6
+    },
+    {
+      "label": "without_rag",
+      "function_count": 5,
+      "suspicious_count": 0,
+      "runtime_like_count": 0,
+      "candidate_attack_total": 0,
+      "attack_doc_hit_count": 0,
+      "api_chain_hit_count": 0,
+      "similar_func_hit_count": 0,
+      "avg_candidate_attack_count": 0.0,
+      "avg_evidence_lines": 0.0
+    }
+  ]
+}
