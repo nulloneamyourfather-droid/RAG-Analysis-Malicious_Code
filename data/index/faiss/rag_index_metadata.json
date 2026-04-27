@@ -1,0 +1,12 @@
+{
+  "backend": "semantic",
+  "doc_count": 500,
+  "feature_count": 384,
+  "embedding_dim": 384,
+  "sources": {
+    "ATTACK": 472,
+    "API_CHAIN": 8,
+    "IDA_SEMANTIC": 20
+  },
+  "vectorizer": "sentence-transformers/all-MiniLM-L6-v2"
+}
