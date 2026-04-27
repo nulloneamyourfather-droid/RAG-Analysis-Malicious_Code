@@ -40,4 +40,7 @@
   - [run_sample_pipeline.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/run_sample_pipeline.py)
 - 实验脚本：
   - [experiment_runner.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/experiment_runner.py)
+ - 清理脚本：
+  - [attck_knowledge/tools/cleanup_locked_legacy.ps1](/d:/Graduation%20project/Midterm/asm/attck_knowledge/tools/cleanup_locked_legacy.ps1)
+
 
