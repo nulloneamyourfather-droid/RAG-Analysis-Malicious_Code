@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ATTACK Raw Record",
+  "type": "object",
+  "required": [
+    "stix_id",
+    "attack_id",
+    "name",
+    "description",
+    "type",
+    "platforms",
+    "tactics",
+    "tactic_ids",
+    "data_sources",
+    "mitigations",
+    "url",
+    "keywords"
+  ],
+  "properties": {
+    "stix_id": { "type": "string" },
+    "attack_id": { "type": "string" },
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "type": { "type": "string" },
+    "platforms": { "type": "array", "items": { "type": "string" } },
+    "tactics": { "type": "array", "items": { "type": "string" } },
+    "tactic_ids": { "type": "array", "items": { "type": "string" } },
+    "data_sources": { "type": "array", "items": { "type": "string" } },
+    "permissions_required": { "type": "array", "items": { "type": "string" } },
+    "defense_bypassed": { "type": "array", "items": { "type": "string" } },
+    "detection": { "type": "string" },
+    "system_requirements": { "type": "array", "items": { "type": "string" } },
+    "remote_support": { "type": "boolean" },
+    "mitigations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["mitigation_id", "mitigation_name", "mitigation_desc"],
+        "properties": {
+          "mitigation_id": { "type": "string" },
+          "mitigation_name": { "type": "string" },
+          "mitigation_desc": { "type": "string" }
+        }
+      }
+    },
+    "url": { "type": "string" },
+    "keywords": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}

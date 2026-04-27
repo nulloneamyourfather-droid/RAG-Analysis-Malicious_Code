@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IDA Function Raw Record",
+  "type": "object",
+  "required": [
+    "sample_name",
+    "sample_hash",
+    "platform",
+    "function_name",
+    "function_addr",
+    "pseudo_code",
+    "api_calls",
+    "strings",
+    "callers",
+    "callees",
+    "behavior_tags",
+    "mapped_attack_ids",
+    "summary",
+    "keywords"
+  ],
+  "properties": {
+    "sample_name": { "type": "string" },
+    "sample_hash": { "type": "string" },
+    "platform": { "type": "string" },
+    "function_name": { "type": "string" },
+    "function_addr": { "type": "string" },
+    "pseudo_code": { "type": "string" },
+    "api_calls": { "type": "array", "items": { "type": "string" } },
+    "strings": { "type": "array", "items": { "type": "string" } },
+    "callers": { "type": "array", "items": { "type": "string" } },
+    "callees": { "type": "array", "items": { "type": "string" } },
+    "behavior_tags": { "type": "array", "items": { "type": "string" } },
+    "mapped_attack_ids": { "type": "array", "items": { "type": "string" } },
+    "summary": { "type": "string" },
+    "keywords": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}

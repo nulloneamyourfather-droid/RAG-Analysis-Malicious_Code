@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RAG Document",
+  "type": "object",
+  "required": [
+    "doc_id",
+    "source",
+    "doc_type",
+    "title",
+    "summary",
+    "content",
+    "tags",
+    "keywords",
+    "platforms",
+    "attack_ids",
+    "metadata"
+  ],
+  "properties": {
+    "doc_id": { "type": "string" },
+    "source": {
+      "type": "string",
+      "enum": ["ATTACK", "API_CHAIN", "IDA_SEMANTIC", "REPORT_MEMORY"]
+    },
+    "doc_type": { "type": "string" },
+    "title": { "type": "string" },
+    "summary": { "type": "string" },
+    "content": { "type": "string" },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "keywords": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "platforms": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "attack_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["language"],
+      "properties": {
+        "language": { "type": "string" }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
