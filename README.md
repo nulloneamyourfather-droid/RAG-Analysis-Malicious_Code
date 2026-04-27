@@ -1,3 +1,5 @@
+#环境默认配置好了IDA-MCP
+
 # Malware Static Analysis Graduation Project
 
 核心内容是：
