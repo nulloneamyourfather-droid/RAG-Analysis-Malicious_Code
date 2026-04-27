@@ -1,0 +1,832 @@
+[
+  {
+    "sample_name": "1.bin",
+    "sample_hash": "d99aee68d77549e2e533f9f074635a62c673e4efb3fb7ba002a8dd91ad138aa8",
+    "platform": "Windows",
+    "function_name": "sub_2454D7C",
+    "function_addr": "0x2454d7c",
+    "pseudo_code": "/* line: 0, address: 0x2454d7c */ char __fastcall sub_2454D7C(__int64 **a1, __int64 a2)\n/* line: 1 */ {\n/* line: 2 */ char v4; // di\n/* line: 3 */ __int64 *v5; // rbx\n/* line: 4 */ unsigned __int64 v6; // rax\n/* line: 5 */ __int64 v7; // rcx\n/* line: 6 */ __int64 v8; // rax\n/* line: 7 */ unsigned __int64 v9; // rbx\n/* line: 8 */ __int64 *v10; // rsi\n/* line: 9 */ unsigned __int64 v11; // rax\n/* line: 10 */ __int64 v12; // rcx\n/* line: 11 */ __int64 v13; // rdx\n/* line: 12 */ __int64 v14; // r8\n/* line: 13 */ __int64 *v15; // rax\n/* line: 14 */ unsigned __int64 v16; // rcx\n/* line: 15 */ unsigned __int64 v17; // r8\n/* line: 16 */ unsigned __int64 v18; // rcx\n/* line: 17 */ void *v19; // rcx\n/* line: 18 */ unsigned __int64 v20; // rbx\n/* line: 19 */ bool v21; // zf\n/* line: 20 */ __int128 *p_Dst; // rax\n/* line: 21 */ __int64 v23; // rdx\n/* line: 22 */ __int64 v24; // rcx\n/* line: 23 */ __int64 v25; // r8\n/* line: 24 */ unsigned __int64 v26; // r8\n/* line: 25 */ __int128 *v27; // rax\n/* line: 26 */ void *v28; // rcx\n/* line: 27 */ size_t v29; // rax\n/* line: 28 */ LPCWCH *v30; // rdx\n/* line: 29 */ __int64 v31; // rax\n/* line: 30 */ __int64 v32; // rdx\n... (truncated)",
+    "api_calls": [
+      "VariantInit",
+      "WideCharToMultiByte",
+      "VariantClear"
+    ],
+    "strings": [
+      "DeviceID=\\",
+      "\\"
+    ],
+    "callers": [
+      "sub_2459A24",
+      "0x24a5438"
+    ],
+    "callees": [
+      "LOWORD",
+      "wcslen",
+      "_Xlen",
+      "invalid_parameter_noinfo_noreturn",
+      "j_j_free",
+      "memmove",
+      "iswdigit",
+      "strlen",
+      "unknown_libname_28",
+      "int",
+      "VariantInit",
+      "assign",
+      "LOBYTE",
+      "WideCharToMultiByte",
+      "append",
+      "_mm_load_si128",
+      "VariantClear",
+      "void"
+    ],
+    "behavior_tags": [],
+    "mapped_attack_ids": [],
+    "summary": "sub_2454D7C uses APIs: VariantInit, WideCharToMultiByte, VariantClear.",
+    "keywords": [
+      "VariantInit",
+      "WideCharToMultiByte",
+      "VariantClear",
+      "DeviceID=\\",
+      "\\",
+      "sub_2454D7C"
+    ]
+  },
+  {
+    "sample_name": "1.bin",
+    "sample_hash": "d99aee68d77549e2e533f9f074635a62c673e4efb3fb7ba002a8dd91ad138aa8",
+    "platform": "Windows",
+    "function_name": "sub_2455800",
+    "function_addr": "0x2455800",
+    "pseudo_code": "/* line: 0, address: 0x2455800 */ char __fastcall sub_2455800(_QWORD *a1, __int64 a2)\n/* line: 1 */ {\n/* line: 2 */ size_t v4; // rax\n/* line: 3 */ __int128 *p_Dst; // rdx\n/* line: 4 */ __int64 v6; // rax\n/* line: 5 */ __int64 v7; // rdx\n/* line: 6 */ void *v8; // rcx\n/* line: 7 */ __int64 *v9; // rbx\n/* line: 8 */ unsigned __int64 v10; // rax\n/* line: 9 */ __int64 v11; // rcx\n/* line: 10 */ __int64 v12; // rax\n/* line: 11 */ unsigned __int64 v13; // rbx\n/* line: 12 */ __int64 *v14; // rsi\n/* line: 13 */ unsigned __int64 v15; // rax\n/* line: 14 */ __int64 v16; // rcx\n/* line: 15 */ __int64 v17; // rdx\n/* line: 16 */ __int64 v18; // r8\n/* line: 17 */ _QWORD *v19; // rax\n/* line: 18 */ unsigned __int64 v20; // rcx\n/* line: 19 */ unsigned __int64 v21; // r8\n/* line: 20 */ unsigned __int64 v22; // rcx\n/* line: 21 */ unsigned __int64 v23; // rbx\n/* line: 22 */ bool v24; // zf\n/* line: 23 */ __int128 *v25; // rax\n/* line: 24 */ __int64 v26; // rdx\n/* line: 25 */ __int64 v27; // rcx\n/* line: 26 */ __int64 v28; // r8\n/* line: 27 */ unsigned __int64 v29; // r8\n/* line: 28 */ __int128 *v30; // rax\n/* line: 29 */ void *v31; // rcx\n/* line: 30 */ size_t v32; // rax\n... (truncated)",
+    "api_calls": [
+      "VariantInit",
+      "VariantClear",
+      "WideCharToMultiByte"
+    ],
+    "strings": [
+      "DeviceID=\\",
+      "\\"
+    ],
+    "callers": [
+      "sub_2459A30",
+      "0x24a5444"
+    ],
+    "callees": [
+      "LOWORD",
+      "assign",
+      "strlen",
+      "invalid_parameter_noinfo_noreturn",
+      "j_j_free",
+      "wcslen",
+      "memset",
+      "sizeof",
+      "_Xlen",
+      "memmove",
+      "iswdigit",
+      "_mm_load_si128",
+      "unknown_libname_28",
+      "LOBYTE",
+      "int",
+      "VariantInit",
+      "VariantClear",
+      "void",
+      "WideCharToMultiByte",
+      "append",
+      "LODWORD",
+      "SLODWORD"
+    ],
+    "behavior_tags": [],
+    "mapped_attack_ids": [],
+    "summary": "sub_2455800 uses APIs: VariantInit, VariantClear, WideCharToMultiByte.",
+    "keywords": [
+      "VariantInit",
+      "VariantClear",
+      "WideCharToMultiByte",
+      "DeviceID=\\",
+      "\\",
+      "sub_2455800"
+    ]
+  },
+  {
+    "sample_name": "1.bin",
+    "sample_hash": "d99aee68d77549e2e533f9f074635a62c673e4efb3fb7ba002a8dd91ad138aa8",
+    "platform": "Windows",
+    "function_name": "sub_2457260",
+    "function_addr": "0x2457260",
+    "pseudo_code": "/* line: 0, address: 0x2457260 */ __int64 *__fastcall sub_2457260(__int64 *a1, __int64 a2)\n/* line: 1 */ {\n/* line: 2 */ __int64 **v4; // rbx\n/* line: 3 */ __int64 **v5; // rax\n/* line: 4 */ __int64 v6; // r8\n/* line: 5 */ __int64 *v7; // rax\n/* line: 6 */ __int64 v8; // rdx\n/* line: 7 */ int v9; // ebx\n/* line: 8 */ _QWORD *v10; // rax\n/* line: 9 */ __int64 v11; // rdx\n/* line: 10 */ void *v12; // rcx\n/* line: 11 */ void *v13; // rcx\n/* line: 12 */ __int64 v14; // rcx\n/* line: 13 */ unsigned __int64 v15; // rax\n/* line: 14 */ unsigned __int64 v16; // rax\n/* line: 15 */ int v17; // eax\n/* line: 16 */ __int64 cbMultiByte; // rbx\n/* line: 17 */ LPSTR *v19; // rax\n/* line: 18 */ CHAR *lpMultiByteStr; // rax\n/* line: 19 */ int v21; // eax\n/* line: 20 */ LPSTR *v22; // rax\n/* line: 21 */ void *v23; // rax\n/* line: 22 */ __int64 v24; // rdx\n/* line: 23 */ void *v25; // rcx\n/* line: 24 */ LPSTR v26; // rcx\n/* line: 25 */ int v28; // [rsp+44h] [rbp-BCh] BYREF\n/* line: 26 */ __int64 v29; // [rsp+48h] [rbp-B8h] BYREF\n/* line: 27 */ __int64 v30; // [rsp+50h] [rbp-B0h] BYREF\n/* line: 28 */ VARIANTARG v31; // [rsp+58h] [rbp-A8h] BYREF\n/* line: 29 */ __int64 v32; // [rsp+70h] [rbp-90h] BYREF\n... (truncated)",
+    "api_calls": [
+      "VariantInit",
+      "WideCharToMultiByte",
+      "VariantClear"
+    ],
+    "strings": [],
+    "callers": [
+      "sub_2459A3C",
+      "0x24a5564"
+    ],
+    "callees": [
+      "void",
+      "VariantInit",
+      "int",
+      "wcslen",
+      "unknown_libname_28",
+      "LOBYTE",
+      "WideCharToMultiByte",
+      "append",
+      "invalid_parameter_noinfo_noreturn",
+      "j_j_free",
+      "VariantClear",
+      "_mm_load_si128"
+    ],
+    "behavior_tags": [],
+    "mapped_attack_ids": [],
+    "summary": "sub_2457260 uses APIs: VariantInit, WideCharToMultiByte, VariantClear.",
+    "keywords": [
+      "VariantInit",
+      "WideCharToMultiByte",
+      "VariantClear",
+      "sub_2457260"
+    ]
+  },
+  {
+    "sample_name": "1.bin",
+    "sample_hash": "d99aee68d77549e2e533f9f074635a62c673e4efb3fb7ba002a8dd91ad138aa8",
+    "platform": "Windows",
+    "function_name": "sub_24579BC",
+    "function_addr": "0x24579bc",
+    "pseudo_code": "/* line: 0, address: 0x24579bc */ __int64 __fastcall sub_24579BC(char *Str1, LPCSTR lpProcName)\n/* line: 1 */ {\n/* line: 2 */ __int64 v4; // rdi\n/* line: 3 */ HMODULE LibraryA; // rax\n/* line: 4 */ CHAR String1[112]; // [rsp+20h] [rbp-88h] BYREF\n/* line: 5 */ \n/* line: 6, address: 0x24579eb */ v4 = sub_2457C50(Str1);\n/* line: 7 */ if ( v4\n/* line: 8 */ && (strcmp(Str1, aFltmgrSys)\n/* line: 9 */ ? (LibraryA = LoadLibraryA(Str1))\n/* line: 10 */ : (strcpy(String1, \"C:\\\\windows\\\\system32\\\\drivers\\\\\"),\n/* line: 11 */ memset(&String1[29], 0, 0x47ui64),\n/* line: 12 */ lstrcatA(String1, Str1),\n/* line: 13 */ LibraryA = LoadLibraryExA(String1, 0i64, 1u)),\n/* line: 14 */ LibraryA) )\n/* line: 15 */ {\n/* line: 16, address: 0x2457a89 */ return (__int64)GetProcAddress(LibraryA, lpProcName) + v4 - (_QWORD)LibraryA;\n/* line: 17 */ }\n/* line: 18 */ else\n/* line: 19 */ {\n/* line: 20, address: 0x2457a8e */ return 0i64;\n/* line: 21 */ }\n/* line: 22 */ }",
+    "api_calls": [
+      "LoadLibraryA",
+      "lstrcatA",
+      "LoadLibraryExA",
+      "GetProcAddress"
+    ],
+    "strings": [
+      "C:\\\\windows\\\\system32\\\\drivers\\\\"
+    ],
+    "callers": [
+      "sub_24569B0",
+      "sub_2456B64",
+      "sub_2457CE8",
+      "0x24a5588"
+    ],
+    "callees": [
+      "strcmp",
+      "LoadLibraryA",
+      "strcpy",
+      "memset",
+      "lstrcatA",
+      "LoadLibraryExA",
+      "GetProcAddress"
+    ],
+    "behavior_tags": [],
+    "mapped_attack_ids": [],
+    "summary": "sub_24579BC uses APIs: LoadLibraryA, lstrcatA, LoadLibraryExA, GetProcAddress.",
+    "keywords": [
+      "LoadLibraryA",
+      "lstrcatA",
+      "LoadLibraryExA",
+      "GetProcAddress",
+      "C:\\\\windows\\\\system32\\\\drivers\\\\",
+      "sub_24579BC"
+    ]
+  },
+  {
+    "sample_name": "1.bin",
+    "sample_hash": "d99aee68d77549e2e533f9f074635a62c673e4efb3fb7ba002a8dd91ad138aa8",
+    "platform": "Windows",
+    "function_name": "sub_2457AB8",
+    "function_addr": "0x2457ab8",
+    "pseudo_code": "/* line: 0, address: 0x2457ab8 */ _QWORD *__fastcall sub_2457AB8(_QWORD *Dst)\n/* line: 1 */ {\n/* line: 2 */ DWORD cbData; // [rsp+30h] [rbp-D0h] BYREF\n/* line: 3 */ HKEY hKey; // [rsp+38h] [rbp-C8h] BYREF\n/* line: 4 */ int v5; // [rsp+40h] [rbp-C0h]\n/* line: 5 */ _QWORD *v6; // [rsp+48h] [rbp-B8h]\n/* line: 6 */ BYTE Data[272]; // [rsp+50h] [rbp-B0h] BYREF\n/* line: 7 */ \n/* line: 8, address: 0x2457ae0 */ v6 = Dst;\n/* line: 9, address: 0x2457aed */ *(_OWORD *)Dst = 0i64;\n/* line: 10, address: 0x2457af0 */ Dst[2] = 0i64;\n/* line: 11, address: 0x2457af5 */ Dst[2] = 0i64;\n/* line: 12, address: 0x2457afa */ Dst[3] = 15i64;\n/* line: 13, address: 0x2457b02 */ *(_BYTE *)Dst = 0;\n/* line: 14, address: 0x2457b05 */ v5 = 1;\n/* line: 15, address: 0x2457b2e */ if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0x20019u, &hKey) )\n/* line: 16 */ {\n/* line: 17, address: 0x2457b47 */ memset(Data, 0, 0x104ui64);\n/* line: 18, address: 0x2457b4c */ cbData = 260;\n/* line: 19, address: 0x2457b76 */ if ( !RegQueryValueExA(hKey, ValueName, 0i64, 0i64, Data, &cbData) )\n/* line: 20, address: 0x2457b88 */ sub_245B05C(Dst, (char *)Data);\n/* line: 21, address: 0x2457b92 */ RegCloseKey(hKey);\n/* line: 22 */ }\n... (truncated)",
+    "api_calls": [
+      "RegOpenKeyExA",
+      "RegQueryValueExA",
+      "RegCloseKey"
+    ],
+    "strings": [],
+    "callers": [
+      "nishishabi",
+      "0x24a5594"
+    ],
+    "callees": [
+      "RegOpenKeyExA",
+      "memset",
+      "RegQueryValueExA",
+      "RegCloseKey"
+    ],
+    "behavior_tags": [],
+    "mapped_attack_ids": [],
+    "summary": "sub_2457AB8 uses APIs: RegOpenKeyExA, RegQueryValueExA, RegCloseKey.",
+    "keywords": [
+      "RegOpenKeyExA",
+      "RegQueryValueExA",
+      "RegCloseKey",
+      "sub_2457AB8"
+    ]
+  },
+  {
+    "sample_name": "1.bin",
+    "sample_hash": "d99aee68d77549e2e533f9f074635a62c673e4efb3fb7ba002a8dd91ad138aa8",
+    "platform": "Windows",
+    "function_name": "sub_2457F64",
+    "function_addr": "0x2457f64",
+    "pseudo_code": "/* line: 0, address: 0x2457f64 */ void __fastcall sub_2457F64(__int64 a1, unsigned __int16 a2, __int64 **a3)\n/* line: 1 */ {\n/* line: 2 */ const CHAR *v5; // r8\n/* line: 3 */ HRSRC ResourceA; // rbx\n/* line: 4 */ __int64 v7; // r14\n/* line: 5 */ HGLOBAL Resource; // rax\n/* line: 6 */ LPVOID v9; // rbx\n/* line: 7 */ __int64 *v10; // rdx\n/* line: 8 */ unsigned __int64 v11; // rdx\n/* line: 9 */ _QWORD *v12; // rcx\n/* line: 10 */ unsigned __int64 v13; // rdx\n/* line: 11 */ __int64 *v14; // rcx\n/* line: 12 */ int v15; // [rsp+2Ch] [rbp-D4h]\n/* line: 13 */ __int64 v16[21]; // [rsp+30h] [rbp-D0h] BYREF\n/* line: 14 */ __int64 v17[15]; // [rsp+D8h] [rbp-28h] BYREF\n/* line: 15 */ \n/* line: 16, address: 0x2457f8b */ v17[13] = a1;\n/* line: 17, address: 0x2457f8f */ v17[14] = (__int64)a3;\n/* line: 18, address: 0x2457f93 */ v5 = (const CHAR *)a1;\n/* line: 19, address: 0x2457f9b */ if ( *(_QWORD *)(a1 + 24) >= 0x10ui64 )\n/* line: 20, address: 0x2457f9d */ v5 = *(const CHAR **)a1;\n/* line: 21, address: 0x2457fb0 */ ResourceA = FindResourceA(hModule, (LPCSTR)a2, v5);\n/* line: 22, address: 0x2457fc3 */ v7 = SizeofResource(hModule, ResourceA);\n... (truncated)",
+    "api_calls": [
+      "FindResourceA",
+      "SizeofResource",
+      "LoadResource",
+      "LockResource"
+    ],
+    "strings": [],
+    "callers": [
+      "nishishabi",
+      "0x24a55c4"
+    ],
+    "callees": [
+      "FindResourceA",
+      "SizeofResource",
+      "LoadResource",
+      "LockResource",
+      "_Ios_base_dtor",
+      "invalid_parameter_noinfo_noreturn",
+      "j_j_free"
+    ],
+    "behavior_tags": [],
+    "mapped_attack_ids": [],
+    "summary": "sub_2457F64 uses APIs: FindResourceA, SizeofResource, LoadResource, LockResource.",
+    "keywords": [
+      "FindResourceA",
+      "SizeofResource",
+      "LoadResource",
+      "LockResource",
+      "sub_2457F64"
+    ]
+  },
+  {
+    "sample_name": "1.bin",
+    "sample_hash": "d99aee68d77549e2e533f9f074635a62c673e4efb3fb7ba002a8dd91ad138aa8",
+    "platform": "Windows",
+    "function_name": "sub_24582C4",
+    "function_addr": "0x24582c4",
+    "pseudo_code": "/* line: 0, address: 0x24582c4 */ _BOOL8 sub_24582C4()\n/* line: 1 */ {\n/* line: 2 */ char *v0; // rdi\n/* line: 3 */ size_t v1; // rax\n/* line: 4 */ size_t v2; // rbx\n/* line: 5 */ size_t v3; // rax\n/* line: 6 */ int v4; // eax\n/* line: 7 */ HMODULE LibraryA; // rbx\n/* line: 8 */ void (__stdcall *RtlInitUnicodeString)(PUNICODE_STRING, PCWSTR); // rdi\n/* line: 9 */ NTSTATUS (__stdcall *NtLoadDriver)(PUNICODE_STRING); // rsi\n/* line: 10 */ NTSTATUS (__stdcall *RtlAdjustPrivilege)(ULONG, BOOLEAN, BOOLEAN, PBOOLEAN); // rax\n/* line: 11 */ HKEY hKey; // [rsp+38h] [rbp-D0h] BYREF\n/* line: 12 */ BYTE Data[8]; // [rsp+40h] [rbp-C8h] BYREF\n/* line: 13 */ HKEY v12; // [rsp+48h] [rbp-C0h] BYREF\n/* line: 14 */ char v13[8]; // [rsp+50h] [rbp-B8h] BYREF\n/* line: 15 */ char v14[8]; // [rsp+58h] [rbp-B0h] BYREF\n/* line: 16 */ _BYTE String1[216]; // [rsp+60h] [rbp-A8h] BYREF\n/* line: 17 */ \n/* line: 18, address: 0x245830e */ if ( RegOpenKeyExW(HKEY_LOCAL_MACHINE, aSystemCurrentc, 0, 2u, &hKey) )\n/* line: 19, address: 0x245830e */ return 0i64;\n/* line: 20, address: 0x245832d */ if ( RegCreateKeyW(hKey, lpString2, &v12) )\n/* line: 21, address: 0x245832d */ return 0i64;\n... (truncated)",
+    "api_calls": [
+      "RegOpenKeyExW",
+      "RegCreateKeyW",
+      "RegSetValueExA",
+      "RegCloseKey",
+      "LoadLibraryA",
+      "GetProcAddress",
+      "lstrcatW"
+    ],
+    "strings": [],
+    "callers": [
+      "sub_2458124",
+      "0x24a55f4"
+    ],
+    "callees": [
+      "void",
+      "NTSTATUS",
+      "RegOpenKeyExW",
+      "RegCreateKeyW",
+      "j__calloc_base",
+      "strlen",
+      "memmove",
+      "RegSetValueExA",
+      "RegCloseKey",
+      "LoadLibraryA",
+      "GetProcAddress",
+      "int",
+      "wcscpy",
+      "memset",
+      "lstrcatW"
+    ],
+    "behavior_tags": [
+      "Registry Persistence"
+    ],
+    "mapped_attack_ids": [],
+    "summary": "sub_24582C4 uses APIs: RegOpenKeyExW, RegCreateKeyW, RegSetValueExA, RegCloseKey, LoadLibraryA, GetProcAddress.",
+    "keywords": [
+      "RegOpenKeyExW",
+      "RegCreateKeyW",
+      "RegSetValueExA",
+      "RegCloseKey",
+      "LoadLibraryA",
+      "GetProcAddress",
+      "lstrcatW",
+      "Registry Persistence",
+      "sub_24582C4"
+    ]
+  },
+  {
+    "sample_name": "1.bin",
+    "sample_hash": "d99aee68d77549e2e533f9f074635a62c673e4efb3fb7ba002a8dd91ad138aa8",
+    "platform": "Windows",
+    "function_name": "sub_245859C",
+    "function_addr": "0x245859c",
+    "pseudo_code": "/* line: 0, address: 0x245859c */ __int128 *__fastcall sub_245859C(__int128 *Dst, wchar_t *Str2)\n/* line: 1 */ {\n/* line: 2 */ size_t v4; // rax\n/* line: 3 */ HANDLE Toolhelp32Snapshot; // rbx\n/* line: 4 */ BOOL i; // eax\n/* line: 5 */ HANDLE v7; // rbx\n/* line: 6 */ size_t v8; // rax\n/* line: 7 */ unsigned __int64 v9; // rdx\n/* line: 8 */ _QWORD *v10; // rcx\n/* line: 9 */ void *v11; // rcx\n/* line: 10 */ __int128 Src; // [rsp+30h] [rbp-D0h] BYREF\n/* line: 11 */ __m128i si128; // [rsp+40h] [rbp-C0h]\n/* line: 12 */ PROCESSENTRY32W pe; // [rsp+50h] [rbp-B0h] BYREF\n/* line: 13 */ CHAR Filename[272]; // [rsp+290h] [rbp+190h] BYREF\n/* line: 14 */ \n/* line: 15, address: 0x24585d7 */ *Dst = 0i64;\n/* line: 16, address: 0x24585da */ Dst[1] = 0ui64;\n/* line: 17, address: 0x24585eb */ v4 = strlen(byte_2489A18);\n/* line: 18, address: 0x24585fd */ std::string::_Construct<1,char const *>(Dst, byte_2489A18, v4);\n/* line: 19, address: 0x2458617 */ memset(&pe.cntUsage, 0, 0x234ui64);\n/* line: 20, address: 0x245861c */ pe.dwSize = 568;\n/* line: 21, address: 0x245862e */ Toolhelp32Snapshot = CreateToolhelp32Snapshot(2u, 0);\n... (truncated)",
+    "api_calls": [
+      "CreateToolhelp32Snapshot",
+      "Process32FirstW",
+      "Process32NextW",
+      "OpenProcess",
+      "K32GetModuleFileNameExA",
+      "CloseHandle"
+    ],
+    "strings": [],
+    "callers": [
+      "nishishabi",
+      "0x24a560c"
+    ],
+    "callees": [
+      "strlen",
+      "memset",
+      "CreateToolhelp32Snapshot",
+      "Process32FirstW",
+      "Process32NextW",
+      "wcsicmp",
+      "OpenProcess",
+      "K32GetModuleFileNameExA",
+      "CloseHandle",
+      "j_j_free",
+      "memmove",
+      "_mm_load_si128",
+      "LOBYTE",
+      "invalid_parameter_noinfo_noreturn"
+    ],
+    "behavior_tags": [],
+    "mapped_attack_ids": [],
+    "summary": "sub_245859C uses APIs: CreateToolhelp32Snapshot, Process32FirstW, Process32NextW, OpenProcess, K32GetModuleFileNameExA, CloseHandle.",
+    "keywords": [
+      "CreateToolhelp32Snapshot",
+      "Process32FirstW",
+      "Process32NextW",
+      "OpenProcess",
+      "K32GetModuleFileNameExA",
+      "CloseHandle",
+      "sub_245859C"
+    ]
+  },
+  {
+    "sample_name": "1.bin",
+    "sample_hash": "d99aee68d77549e2e533f9f074635a62c673e4efb3fb7ba002a8dd91ad138aa8",
+    "platform": "Windows",
+    "function_name": "sub_24587A8",
+    "function_addr": "0x24587a8",
+    "pseudo_code": "/* line: 0, address: 0x24587a8 */ __int64 __fastcall sub_24587A8(wchar_t *Str2)\n/* line: 1 */ {\n/* line: 2 */ unsigned int v2; // ebx\n/* line: 3 */ HANDLE Toolhelp32Snapshot; // rdi\n/* line: 4 */ BOOL i; // eax\n/* line: 5 */ PROCESSENTRY32W pe; // [rsp+20h] [rbp-258h] BYREF\n/* line: 6 */ \n/* line: 7, address: 0x24587dc */ v2 = 0;\n/* line: 8, address: 0x24587de */ memset(&pe.cntUsage, 0, 0x234ui64);\n/* line: 9, address: 0x24587e5 */ pe.dwSize = 568;\n/* line: 10, address: 0x24587fd */ Toolhelp32Snapshot = CreateToolhelp32Snapshot(2u, 0);\n/* line: 11, address: 0x2458800 */ for ( i = Process32FirstW(Toolhelp32Snapshot, &pe); i; i = Process32NextW(Toolhelp32Snapshot, &pe) )\n/* line: 12 */ {\n/* line: 13, address: 0x2458818 */ if ( !wcsicmp(pe.szExeFile, Str2) )\n/* line: 14, address: 0x2458829 */ return pe.th32ProcessID;\n/* line: 15 */ }\n/* line: 16, address: 0x245882f */ return v2;\n/* line: 17 */ }",
+    "api_calls": [
+      "CreateToolhelp32Snapshot",
+      "Process32FirstW",
+      "Process32NextW"
+    ],
+    "strings": [],
+    "callers": [
+      "nishishabi",
+      "0x24a5618"
+    ],
+    "callees": [
+      "memset",
+      "CreateToolhelp32Snapshot",
+      "Process32FirstW",
+      "Process32NextW",
+      "wcsicmp"
+    ],
+    "behavior_tags": [],
+    "mapped_attack_ids": [],
+    "summary": "sub_24587A8 uses APIs: CreateToolhelp32Snapshot, Process32FirstW, Process32NextW.",
+    "keywords": [
+      "CreateToolhelp32Snapshot",
+      "Process32FirstW",
+      "Process32NextW",
+      "sub_24587A8"
+    ]
+  },
+  {
+    "sample_name": "1.bin",
+    "sample_hash": "d99aee68d77549e2e533f9f074635a62c673e4efb3fb7ba002a8dd91ad138aa8",
+    "platform": "Windows",
+    "function_name": "sub_2458D64",
+    "function_addr": "0x2458d64",
+    "pseudo_code": "/* line: 0, address: 0x2458d64 */ void sub_2458D64()\n/* line: 1 */ {\n/* line: 2 */ HRESULT v0; // eax\n/* line: 3 */ _QWORD *v1; // rax\n/* line: 4 */ __int64 **v2; // rax\n/* line: 5 */ void *v3; // rcx\n/* line: 6 */ LPSTR v4; // rcx\n/* line: 7 */ __int64 (__fastcall **v5)(); // rcx\n/* line: 8 */ __int64 v6; // rax\n/* line: 9 */ __int64 v7; // rdx\n/* line: 10 */ unsigned __int64 v8; // r13\n/* line: 11 */ CHAR *v9; // rsi\n/* line: 12 */ CHAR *v10; // rbx\n/* line: 13 */ __int64 v11; // r14\n/* line: 14 */ CHAR *v12; // r8\n/* line: 15 */ CHAR *v13; // rdx\n/* line: 16 */ const WCHAR *v14; // r8\n/* line: 17 */ int v15; // eax\n/* line: 18 */ int v16; // ebx\n/* line: 19 */ LPSTR *v17; // rcx\n/* line: 20 */ CHAR *v18; // rax\n/* line: 21 */ const WCHAR *v19; // r8\n/* line: 22 */ int v20; // eax\n/* line: 23 */ LPSTR *v21; // rax\n/* line: 24 */ __int64 v22; // rax\n/* line: 25 */ __int64 v23; // rax\n/* line: 26 */ LPSTR *v24; // rdx\n/* line: 27 */ __int64 v25; // rax\n/* line: 28 */ __int64 v26; // rdx\n/* line: 29 */ LPSTR v27; // rcx\n/* line: 30 */ void *v28; // rcx\n/* line: 31 */ size_t v29; // rax\n/* line: 32 */ _QWORD *v30; // rdx\n/* line: 33 */ __int64 v31; // rax\n... (truncated)",
+    "api_calls": [
+      "CoInitializeEx",
+      "CoInitializeSecurity",
+      "CoUninitialize",
+      "WideCharToMultiByte",
+      "Sleep"
+    ],
+    "strings": [],
+    "callers": [
+      "strats",
+      "0x24a5660"
+    ],
+    "callees": [
+      "CoInitializeEx",
+      "CoInitializeSecurity",
+      "CoUninitialize",
+      "_mm_load_si128",
+      "LOWORD",
+      "strlen",
+      "invalid_parameter_noinfo_noreturn",
+      "j_j_free",
+      "LOBYTE",
+      "WideCharToMultiByte",
+      "append",
+      "Sleep",
+      "nishishabi",
+      "unknown_libname_28"
+    ],
+    "behavior_tags": [],
+    "mapped_attack_ids": [],
+    "summary": "sub_2458D64 uses APIs: CoInitializeEx, CoInitializeSecurity, CoUninitialize, WideCharToMultiByte, Sleep.",
+    "keywords": [
+      "CoInitializeEx",
+      "CoInitializeSecurity",
+      "CoUninitialize",
+      "WideCharToMultiByte",
+      "Sleep",
+      "sub_2458D64"
+    ]
+  },
+  {
+    "sample_name": "1.bin",
+    "sample_hash": "d99aee68d77549e2e533f9f074635a62c673e4efb3fb7ba002a8dd91ad138aa8",
+    "platform": "Windows",
+    "function_name": "sub_24594D4",
+    "function_addr": "0x24594d4",
+    "pseudo_code": "/* line: 0, address: 0x24594d4 */ char __fastcall sub_24594D4(wchar_t *Str2)\n/* line: 1 */ {\n/* line: 2 */ HANDLE Toolhelp32Snapshot; // rax\n/* line: 3 */ void *v3; // rdi\n/* line: 4 */ char v5; // bl\n/* line: 5 */ char v6; // bp\n/* line: 6 */ HANDLE v7; // rax\n/* line: 7 */ void *v8; // rsi\n/* line: 8 */ PROCESSENTRY32W pe; // [rsp+20h] [rbp-258h] BYREF\n/* line: 9 */ \n/* line: 10, address: 0x2459505 */ Toolhelp32Snapshot = CreateToolhelp32Snapshot(2u, 0);\n/* line: 11, address: 0x245950a */ v3 = Toolhelp32Snapshot;\n/* line: 12, address: 0x2459511 */ if ( Toolhelp32Snapshot == (HANDLE)-1i64 )\n/* line: 13, address: 0x2459513 */ return 0;\n/* line: 14, address: 0x245951f */ pe.dwSize = 568;\n/* line: 15, address: 0x245952f */ v5 = 0;\n/* line: 16, address: 0x245952a */ if ( Process32FirstW(Toolhelp32Snapshot, &pe) )\n/* line: 17 */ {\n/* line: 18, address: 0x2459535 */ v6 = 0;\n/* line: 19, address: 0x245955a */ while ( Process32NextW(v3, &pe) )\n/* line: 20 */ {\n/* line: 21, address: 0x2459549 */ if ( !wcsicmp(pe.szExeFile, Str2) )\n/* line: 22 */ {\n/* line: 23, address: 0x2459563 */ v6 = 1;\n/* line: 24, address: 0x245956c */ v7 = OpenProcess(1u, 0, pe.th32ProcessID);\n... (truncated)",
+    "api_calls": [
+      "CreateToolhelp32Snapshot",
+      "Process32FirstW",
+      "Process32NextW",
+      "OpenProcess",
+      "TerminateProcess",
+      "CloseHandle"
+    ],
+    "strings": [],
+    "callers": [
+      "nishishabi",
+      "0x24a566c"
+    ],
+    "callees": [
+      "CreateToolhelp32Snapshot",
+      "Process32FirstW",
+      "Process32NextW",
+      "wcsicmp",
+      "OpenProcess",
+      "TerminateProcess",
+      "CloseHandle"
+    ],
+    "behavior_tags": [],
+    "mapped_attack_ids": [],
+    "summary": "sub_24594D4 uses APIs: CreateToolhelp32Snapshot, Process32FirstW, Process32NextW, OpenProcess, TerminateProcess, CloseHandle.",
+    "keywords": [
+      "CreateToolhelp32Snapshot",
+      "Process32FirstW",
+      "Process32NextW",
+      "OpenProcess",
+      "TerminateProcess",
+      "CloseHandle",
+      "sub_24594D4"
+    ]
+  },
+  {
+    "sample_name": "1.bin",
+    "sample_hash": "d99aee68d77549e2e533f9f074635a62c673e4efb3fb7ba002a8dd91ad138aa8",
+    "platform": "Windows",
+    "function_name": "sub_24595C8",
+    "function_addr": "0x24595c8",
+    "pseudo_code": "/* line: 0, address: 0x24595c8 */ __int64 sub_24595C8()\n/* line: 1 */ {\n/* line: 2 */ HMODULE LibraryA; // rdi\n/* line: 3 */ NTSTATUS (__stdcall *RtlAdjustPrivilege)(ULONG, BOOLEAN, BOOLEAN, PBOOLEAN); // rax\n/* line: 4 */ __int64 result; // rax\n/* line: 5 */ void (__stdcall *RtlInitUnicodeString)(PUNICODE_STRING, PCWSTR); // rax\n/* line: 6 */ void (__stdcall *v4)(PUNICODE_STRING, PCWSTR); // rbx\n/* line: 7 */ NTSTATUS (__stdcall *NtUnloadDriver)(PUNICODE_STRING); // rax\n/* line: 8 */ char v6[8]; // [rsp+20h] [rbp-E0h] BYREF\n/* line: 9 */ char v7[24]; // [rsp+28h] [rbp-D8h] BYREF\n/* line: 10 */ WCHAR String1[104]; // [rsp+40h] [rbp-C0h] BYREF\n/* line: 11 */ \n/* line: 12, address: 0x2459604 */ LibraryA = LoadLibraryA(LibFileName);\n/* line: 13, address: 0x2459607 */ RtlAdjustPrivilege = (NTSTATUS (__stdcall *)(ULONG, BOOLEAN, BOOLEAN, PBOOLEAN))GetProcAddress(\n/* line: 14 */ LibraryA,\n/* line: 15 */ aRtladjustprivi);\n/* line: 16, address: 0x245961c */ result = ((__int64 (__fastcall *)(__int64, __int64, _QWORD, char *))RtlAdjustPrivilege)(10i64, 1i64, 0i64, v6);\n/* line: 17, address: 0x2459620 */ if ( (int)result >= 0 )\n/* line: 18 */ {\n... (truncated)",
+    "api_calls": [
+      "LoadLibraryA",
+      "GetProcAddress",
+      "lstrcatW"
+    ],
+    "strings": [],
+    "callers": [
+      "nishishabi",
+      "0x24a5678"
+    ],
+    "callees": [
+      "NTSTATUS",
+      "void",
+      "LoadLibraryA",
+      "GetProcAddress",
+      "wcscpy",
+      "memset",
+      "lstrcatW"
+    ],
+    "behavior_tags": [],
+    "mapped_attack_ids": [],
+    "summary": "sub_24595C8 uses APIs: LoadLibraryA, GetProcAddress, lstrcatW.",
+    "keywords": [
+      "LoadLibraryA",
+      "GetProcAddress",
+      "lstrcatW",
+      "sub_24595C8"
+    ]
+  },
+  {
+    "sample_name": "1.bin",
+    "sample_hash": "d99aee68d77549e2e533f9f074635a62c673e4efb3fb7ba002a8dd91ad138aa8",
+    "platform": "Windows",
+    "function_name": "sub_24596E8",
+    "function_addr": "0x24596e8",
+    "pseudo_code": "/* line: 0, address: 0x24596e8 */ bool __fastcall sub_24596E8(HKEY a1, const WCHAR *a2, const WCHAR *a3, const BYTE *a4, DWORD cbData)\n/* line: 1 */ {\n/* line: 2 */ bool v8; // bl\n/* line: 3 */ HKEY hKey; // [rsp+60h] [rbp+8h] BYREF\n/* line: 4 */ \n/* line: 5, address: 0x24596f3 */ hKey = a1;\n/* line: 6, address: 0x2459726 */ if ( RegCreateKeyExW(a1, a2, 0, 0i64, 0, 0x20006u, 0i64, &hKey, 0i64) )\n/* line: 7, address: 0x2459730 */ return 0;\n/* line: 8, address: 0x245975f */ v8 = RegSetValueExW(hKey, a3, 0, 3u, a4, cbData) == 0;\n/* line: 9, address: 0x2459766 */ RegCloseKey(hKey);\n/* line: 10, address: 0x245976e */ return v8;\n/* line: 11 */ }",
+    "api_calls": [
+      "RegCreateKeyExW",
+      "RegSetValueExW",
+      "RegCloseKey"
+    ],
+    "strings": [],
+    "callers": [
+      "nishishabi",
+      "0x24a5684"
+    ],
+    "callees": [
+      "RegCreateKeyExW",
+      "RegSetValueExW",
+      "RegCloseKey"
+    ],
+    "behavior_tags": [
+      "Registry Persistence"
+    ],
+    "mapped_attack_ids": [],
+    "summary": "sub_24596E8 uses APIs: RegCreateKeyExW, RegSetValueExW, RegCloseKey.",
+    "keywords": [
+      "RegCreateKeyExW",
+      "RegSetValueExW",
+      "RegCloseKey",
+      "Registry Persistence",
+      "sub_24596E8"
+    ]
+  },
+  {
+    "sample_name": "1.bin",
+    "sample_hash": "d99aee68d77549e2e533f9f074635a62c673e4efb3fb7ba002a8dd91ad138aa8",
+    "platform": "Windows",
+    "function_name": "sub_2459780",
+    "function_addr": "0x2459780",
+    "pseudo_code": "/* line: 0, address: 0x2459780 */ bool __fastcall sub_2459780(HKEY a1, const WCHAR *a2, const WCHAR *a3, int a4)\n/* line: 1 */ {\n/* line: 2 */ bool v6; // bl\n/* line: 3 */ HKEY hKey; // [rsp+50h] [rbp-18h] BYREF\n/* line: 4 */ int Data; // [rsp+88h] [rbp+20h] BYREF\n/* line: 5 */ \n/* line: 6, address: 0x2459787 */ Data = a4;\n/* line: 7, address: 0x24597b7 */ hKey = 0i64;\n/* line: 8, address: 0x24597bb */ if ( RegCreateKeyExW(a1, a2, 0, 0i64, 0, 0x20006u, 0i64, &hKey, 0i64) )\n/* line: 9, address: 0x24597c5 */ return 0;\n/* line: 10, address: 0x24597f6 */ v6 = RegSetValueExW(hKey, a3, 0, 4u, (const BYTE *)&Data, 4u) == 0;\n/* line: 11, address: 0x24597fd */ RegCloseKey(hKey);\n/* line: 12, address: 0x2459805 */ return v6;\n/* line: 13 */ }",
+    "api_calls": [
+      "RegCreateKeyExW",
+      "RegSetValueExW",
+      "RegCloseKey"
+    ],
+    "strings": [],
+    "callers": [
+      "nishishabi",
+      "0x24a5690"
+    ],
+    "callees": [
+      "RegCreateKeyExW",
+      "RegSetValueExW",
+      "RegCloseKey"
+    ],
+    "behavior_tags": [
+      "Registry Persistence"
+    ],
+    "mapped_attack_ids": [],
+    "summary": "sub_2459780 uses APIs: RegCreateKeyExW, RegSetValueExW, RegCloseKey.",
+    "keywords": [
+      "RegCreateKeyExW",
+      "RegSetValueExW",
+      "RegCloseKey",
+      "Registry Persistence",
+      "sub_2459780"
+    ]
+  },
+  {
+    "sample_name": "1.bin",
+    "sample_hash": "d99aee68d77549e2e533f9f074635a62c673e4efb3fb7ba002a8dd91ad138aa8",
+    "platform": "Windows",
+    "function_name": "nishishabi",
+    "function_addr": "0x245d864",
+    "pseudo_code": "/* line: 0, address: 0x245d864 */ void nishishabi()\n/* line: 1 */ {\n/* line: 2 */ size_t v0; // rax\n/* line: 3 */ size_t v1; // rax\n/* line: 4 */ __int128 *v2; // rdx\n/* line: 5 */ __int64 v3; // rax\n/* line: 6 */ unsigned __int8 *v4; // rcx\n/* line: 7 */ unsigned __int64 v5; // rax\n/* line: 8 */ __int128 *v6; // rdx\n/* line: 9 */ __int128 *v7; // rax\n/* line: 10 */ void *v8; // rcx\n/* line: 11 */ _QWORD *v9; // rbx\n/* line: 12 */ _QWORD *v10; // rax\n/* line: 13 */ __int64 v11; // rdx\n/* line: 14 */ LPCSTR *v12; // rbx\n/* line: 15 */ CHAR *v13; // rcx\n/* line: 16 */ void *v14; // rcx\n/* line: 17 */ void *v15; // rcx\n/* line: 18 */ CHAR *v16; // rcx\n/* line: 19 */ CHAR *v17; // rcx\n/* line: 20 */ size_t v18; // rax\n/* line: 21 */ LPCSTR *v19; // rsi\n/* line: 22 */ unsigned __int64 v20; // rdi\n/* line: 23 */ __int64 v21; // rbx\n/* line: 24 */ size_t v22; // rcx\n/* line: 25 */ void *v23; // rax\n/* line: 26 */ const CHAR *v24; // rcx\n/* line: 27 */ int i; // eax\n/* line: 28 */ const CHAR *v26; // rcx\n/* line: 29 */ const char *v27; // rbx\n/* line: 30 */ size_t v28; // rax\n/* line: 31 */ bool v29; // bl\n/* line: 32 */ void *v30; // rcx\n/* line: 33 */ size_t v31; // rax\n... (truncated)",
+    "api_calls": [
+      "SetFileAttributesA",
+      "GetLastError",
+      "Sleep",
+      "CloseHandle",
+      "DeleteFileA"
+    ],
+    "strings": [],
+    "callers": [
+      "sub_2458D64",
+      "0x249d798",
+      "0x24a5a8c"
+    ],
+    "callees": [
+      "nishishabi",
+      "strlen",
+      "invalid_parameter_noinfo_noreturn",
+      "j_j_free",
+      "LOBYTE",
+      "memmove",
+      "_mm_load_si128",
+      "_Xlen",
+      "new",
+      "SetFileAttributesA",
+      "GetLastError",
+      "exit",
+      "Sleep",
+      "CloseHandle",
+      "DeleteFileA",
+      "_Tidy_deallocate",
+      "append",
+      "unknown_libname_28"
+    ],
+    "behavior_tags": [],
+    "mapped_attack_ids": [],
+    "summary": "nishishabi uses APIs: SetFileAttributesA, GetLastError, Sleep, CloseHandle, DeleteFileA.",
+    "keywords": [
+      "SetFileAttributesA",
+      "GetLastError",
+      "Sleep",
+      "CloseHandle",
+      "DeleteFileA",
+      "nishishabi"
+    ]
+  },
+  {
+    "sample_name": "1.bin",
+    "sample_hash": "d99aee68d77549e2e533f9f074635a62c673e4efb3fb7ba002a8dd91ad138aa8",
+    "platform": "Windows",
+    "function_name": "__crtLCMapStringA",
+    "function_addr": "0x24607bc",
+    "pseudo_code": "/* line: 0, address: 0x24607bc */ int __fastcall _crtLCMapStringA(\n/* line: 1 */ LPCWSTR lpLocaleName,\n/* line: 2 */ DWORD dwMapFlags,\n/* line: 3 */ char *String,\n/* line: 4 */ int a4,\n/* line: 5 */ LPWSTR lpDestStr,\n/* line: 6 */ int cchDest,\n/* line: 7 */ UINT CodePage,\n/* line: 8 */ int a8)\n/* line: 9 */ {\n/* line: 10 */ int v8; // edi\n/* line: 11 */ int v12; // eax\n/* line: 12 */ bool v13; // cc\n/* line: 13 */ int result; // eax\n/* line: 14 */ __int64 v15; // r14\n/* line: 15 */ unsigned __int64 v16; // rcx\n/* line: 16 */ unsigned __int64 v17; // rax\n/* line: 17 */ __int64 v18; // rcx\n/* line: 18 */ signed __int64 v19; // rcx\n/* line: 19 */ void *v20; // rsp\n/* line: 20 */ void *v21; // rsp\n/* line: 21 */ WCHAR *v22; // rbx\n/* line: 22 */ WCHAR *v23; // rax\n/* line: 23 */ int v24; // eax\n/* line: 24 */ int v25; // edi\n/* line: 25 */ unsigned __int64 v26; // rcx\n/* line: 26 */ __int64 v27; // rax\n/* line: 27 */ void *v28; // rsp\n/* line: 28 */ WCHAR *v29; // rsi\n/* line: 29 */ WCHAR *v30; // rax\n/* line: 30 */ _BYTE v31[32]; // [rsp+0h] [rbp-50h] BYREF\n/* line: 31 */ LPWSTR lpWideCharStr; // [rsp+20h] [rbp-30h]\n/* line: 32 */ int cchWideChar; // [rsp+28h] [rbp-28h]\n... (truncated)",
+    "api_calls": [
+      "MultiByteToWideChar",
+      "LCMapStringEx",
+      "WideCharToMultiByte"
+    ],
+    "strings": [],
+    "callers": [
+      "_Tolower",
+      "_Toupper",
+      "0x24a5cd8"
+    ],
+    "callees": [
+      "_crtLCMapStringA",
+      "_strncnt",
+      "MultiByteToWideChar",
+      "j__malloc_base",
+      "LCMapStringEx",
+      "alloca",
+      "WideCharToMultiByte",
+      "free"
+    ],
+    "behavior_tags": [],
+    "mapped_attack_ids": [],
+    "summary": "__crtLCMapStringA uses APIs: MultiByteToWideChar, LCMapStringEx, WideCharToMultiByte.",
+    "keywords": [
+      "MultiByteToWideChar",
+      "LCMapStringEx",
+      "WideCharToMultiByte",
+      "__crtLCMapStringA"
+    ]
+  },
+  {
+    "sample_name": "1.bin",
+    "sample_hash": "d99aee68d77549e2e533f9f074635a62c673e4efb3fb7ba002a8dd91ad138aa8",
+    "platform": "Windows",
+    "function_name": "sub_2460AD0",
+    "function_addr": "0x2460ad0",
+    "pseudo_code": "/* line: 0, address: 0x2460ad0 */ BSTR __fastcall sub_2460AD0(LPCCH lpMultiByteStr)\n/* line: 1 */ {\n/* line: 2 */ __int64 v3; // rbx\n/* line: 3 */ unsigned __int64 v4; // rbx\n/* line: 4 */ int v5; // eax\n/* line: 5 */ int cchWideChar; // r14d\n/* line: 6 */ size_t v7; // rcx\n/* line: 7 */ __int64 v8; // rax\n/* line: 8 */ void *v9; // rsp\n/* line: 9 */ void *lpWideCharStr; // rdi\n/* line: 10 */ BSTR v11; // rbx\n/* line: 11 */ signed int LastError; // eax\n/* line: 12 */ signed int v13; // eax\n/* line: 13 */ WCHAR WideCharStr[2]; // [rsp+30h] [rbp+0h] BYREF\n/* line: 14 */ int v15; // [rsp+34h] [rbp+4h]\n/* line: 15 */ void *v16; // [rsp+38h] [rbp+8h]\n/* line: 16 */ \n/* line: 17, address: 0x2460afe */ if ( !lpMultiByteStr )\n/* line: 18, address: 0x2460b00 */ return 0i64;\n/* line: 19, address: 0x2460b1f */ v3 = -1i64;\n/* line: 20, address: 0x2460b29 */ do\n/* line: 21, address: 0x2460b26 */ ++v3;\n/* line: 22, address: 0x2460b29 */ while ( lpMultiByteStr[v3] );\n/* line: 23, address: 0x2460b2f */ v4 = v3 + 1;\n/* line: 24, address: 0x2460b39 */ if ( v4 > 0x7FFFFFFF )\n/* line: 25 */ {\n/* line: 26, address: 0x2460c1d */ sub_2460AC0(2147942487i64);\n... (truncated)",
+    "api_calls": [
+      "MultiByteToWideChar",
+      "GetLastError",
+      "SysAllocString"
+    ],
+    "strings": [],
+    "callers": [
+      "sub_2454220",
+      "0x24a5ce4"
+    ],
+    "callees": [
+      "__debugbreak",
+      "MultiByteToWideChar",
+      "GetLastError",
+      "j__malloc_base",
+      "alloca",
+      "free",
+      "JUMPOUT",
+      "SysAllocString"
+    ],
+    "behavior_tags": [],
+    "mapped_attack_ids": [],
+    "summary": "sub_2460AD0 uses APIs: MultiByteToWideChar, GetLastError, SysAllocString.",
+    "keywords": [
+      "MultiByteToWideChar",
+      "GetLastError",
+      "SysAllocString",
+      "sub_2460AD0"
+    ]
+  },
+  {
+    "sample_name": "1.bin",
+    "sample_hash": "d99aee68d77549e2e533f9f074635a62c673e4efb3fb7ba002a8dd91ad138aa8",
+    "platform": "Windows",
+    "function_name": "__raise_securityfailure",
+    "function_addr": "0x2461a7c",
+    "pseudo_code": "/* line: 0, address: 0x2461a7c */ BOOL __fastcall _raise_securityfailure(struct _EXCEPTION_POINTERS *ExceptionInfo)\n/* line: 1 */ {\n/* line: 2 */ HANDLE CurrentProcess; // rax\n/* line: 3 */ \n/* line: 4, address: 0x2461a87 */ SetUnhandledExceptionFilter(0i64);\n/* line: 5, address: 0x2461a90 */ UnhandledExceptionFilter(ExceptionInfo);\n/* line: 6, address: 0x2461a96 */ CurrentProcess = GetCurrentProcess();\n/* line: 7, address: 0x2461aa4 */ return TerminateProcess(CurrentProcess, 0xC0000409);\n/* line: 8 */ }",
+    "api_calls": [
+      "SetUnhandledExceptionFilter",
+      "UnhandledExceptionFilter",
+      "GetCurrentProcess",
+      "TerminateProcess"
+    ],
+    "strings": [],
+    "callers": [
+      "__report_gsfailure",
+      "__report_securityfailure",
+      "0x24a5e94"
+    ],
+    "callees": [
+      "_raise_securityfailure",
+      "SetUnhandledExceptionFilter",
+      "UnhandledExceptionFilter",
+      "GetCurrentProcess",
+      "TerminateProcess"
+    ],
+    "behavior_tags": [],
+    "mapped_attack_ids": [],
+    "summary": "__raise_securityfailure uses APIs: SetUnhandledExceptionFilter, UnhandledExceptionFilter, GetCurrentProcess, TerminateProcess.",
+    "keywords": [
+      "SetUnhandledExceptionFilter",
+      "UnhandledExceptionFilter",
+      "GetCurrentProcess",
+      "TerminateProcess",
+      "__raise_securityfailure"
+    ]
+  },
+  {
+    "sample_name": "1.bin",
+    "sample_hash": "d99aee68d77549e2e533f9f074635a62c673e4efb3fb7ba002a8dd91ad138aa8",
+    "platform": "Windows",
+    "function_name": "capture_current_context",
+    "function_addr": "0x2461c34",
+    "pseudo_code": "/* line: 0, address: 0x2461c34 */ struct _RUNTIME_FUNCTION *__fastcall capture_current_context(PCONTEXT ContextRecord)\n/* line: 1 */ {\n/* line: 2 */ DWORD64 Rip; // rdi\n/* line: 3 */ struct _RUNTIME_FUNCTION *result; // rax\n/* line: 4 */ unsigned __int64 ImageBase; // [rsp+50h] [rbp+8h] BYREF\n/* line: 5 */ unsigned __int64 EstablisherFrame; // [rsp+58h] [rbp+10h] BYREF\n/* line: 6 */ PVOID HandlerData; // [rsp+60h] [rbp+18h] BYREF\n/* line: 7 */ \n/* line: 8, address: 0x2461c41 */ RtlCaptureContext(ContextRecord);\n/* line: 9, address: 0x2461c47 */ Rip = ContextRecord->Rip;\n/* line: 10, address: 0x2461c59 */ result = RtlLookupFunctionEntry(Rip, &ImageBase, 0i64);\n/* line: 11, address: 0x2461c62 */ if ( result )\n/* line: 12, address: 0x2461c90 */ return (struct _RUNTIME_FUNCTION *)RtlVirtualUnwind(\n/* line: 13 */ 0,\n/* line: 14 */ ImageBase,\n/* line: 15 */ Rip,\n/* line: 16 */ result,\n/* line: 17 */ ContextRecord,\n/* line: 18 */ &HandlerData,\n/* line: 19 */ &EstablisherFrame,\n/* line: 20 */ 0i64);\n/* line: 21, address: 0x2461c96 */ return result;\n/* line: 22 */ }",
+    "api_calls": [
+      "RtlCaptureContext",
+      "RtlLookupFunctionEntry",
+      "RtlVirtualUnwind"
+    ],
+    "strings": [],
+    "callers": [
+      "__report_securityfailure",
+      "0x24a5eb8",
+      "0x24a5ec4"
+    ],
+    "callees": [
+      "capture_current_context",
+      "RtlCaptureContext",
+      "RtlLookupFunctionEntry",
+      "RtlVirtualUnwind"
+    ],
+    "behavior_tags": [],
+    "mapped_attack_ids": [],
+    "summary": "capture_current_context uses APIs: RtlCaptureContext, RtlLookupFunctionEntry, RtlVirtualUnwind.",
+    "keywords": [
+      "RtlCaptureContext",
+      "RtlLookupFunctionEntry",
+      "RtlVirtualUnwind",
+      "capture_current_context"
+    ]
+  },
+  {
+    "sample_name": "1.bin",
+    "sample_hash": "d99aee68d77549e2e533f9f074635a62c673e4efb3fb7ba002a8dd91ad138aa8",
+    "platform": "Windows",
+    "function_name": "__security_init_cookie",
+    "function_addr": "0x2461d18",
+    "pseudo_code": "/* line: 0, address: 0x2461d18 */ void __cdecl _security_init_cookie()\n/* line: 1 */ {\n/* line: 2 */ uintptr_t v0; // rax\n/* line: 3 */ unsigned __int64 v1; // [rsp+30h] [rbp+10h] BYREF\n/* line: 4 */ struct _FILETIME SystemTimeAsFileTime; // [rsp+38h] [rbp+18h] BYREF\n/* line: 5 */ LARGE_INTEGER PerformanceCount; // [rsp+40h] [rbp+20h] BYREF\n/* line: 6 */ \n/* line: 7, address: 0x2461d25 */ v0 = _security_cookie;\n/* line: 8, address: 0x2461d39 */ if ( _security_cookie == 0x2B992DDFA232i64 )\n/* line: 9 */ {\n/* line: 10, address: 0x2461d3b */ SystemTimeAsFileTime = 0i64;\n/* line: 11, address: 0x2461d44 */ GetSystemTimeAsFileTime(&SystemTimeAsFileTime);\n/* line: 12, address: 0x2461d4e */ v1 = (unsigned __int64)SystemTimeAsFileTime;\n/* line: 13, address: 0x2461d5a */ v1 ^= GetCurrentThreadId();\n/* line: 14, address: 0x2461d6a */ v1 ^= GetCurrentProcessId();\n/* line: 15, address: 0x2461d6e */ QueryPerformanceCounter(&PerformanceCount);\n/* line: 16, address: 0x2461d94 */ v0 = ((unsigned __int64)&v1 ^ v1 ^ PerformanceCount.QuadPart ^ ((unsigned __int64)PerformanceCount.LowPart << 32)) & 0xFFFFFFFFFFFFi64;\n/* line: 17, address: 0x2461da4 */ if ( v0 == 0x2B992DDFA232i64 )\n... (truncated)",
+    "api_calls": [
+      "GetSystemTimeAsFileTime",
+      "GetCurrentThreadId",
+      "GetCurrentProcessId",
+      "QueryPerformanceCounter"
+    ],
+    "strings": [],
+    "callers": [
+      "DllEntryPoint",
+      "0x24a5edc"
+    ],
+    "callees": [
+      "_security_init_cookie",
+      "GetSystemTimeAsFileTime",
+      "GetCurrentThreadId",
+      "GetCurrentProcessId",
+      "QueryPerformanceCounter"
+    ],
+    "behavior_tags": [],
+    "mapped_attack_ids": [],
+    "summary": "__security_init_cookie uses APIs: GetSystemTimeAsFileTime, GetCurrentThreadId, GetCurrentProcessId, QueryPerformanceCounter.",
+    "keywords": [
+      "GetSystemTimeAsFileTime",
+      "GetCurrentThreadId",
+      "GetCurrentProcessId",
+      "QueryPerformanceCounter",
+      "__security_init_cookie"
+    ]
+  }
+]
