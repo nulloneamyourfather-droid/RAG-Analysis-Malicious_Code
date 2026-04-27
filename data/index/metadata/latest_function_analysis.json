@@ -1,0 +1,33 @@
+{
+  "sample_name": "test1.exe",
+  "sample_hash": "4897cc2d494adf70f37d2d26492dbadf142f079ca7024333df696a7a0b31ac4a",
+  "function_name": "_RTC_CheckStackVars",
+  "function_addr": "0x1400478e3",
+  "classification": {
+    "runtime_like": true,
+    "malicious_signal": false,
+    "confidence": "medium"
+  },
+  "conclusion": "_RTC_CheckStackVars is more consistent with compiler/runtime support logic than malware behavior.",
+  "runtime_signal": {
+    "is_runtime_like": true,
+    "score": 10,
+    "indicators": [
+      "Function name matches common CRT/runtime prefix",
+      "Pseudocode contains runtime stack-check logic",
+      "Callees include CRT/runtime helpers"
+    ]
+  },
+  "malicious_signal": {
+    "has_malicious_signal": false,
+    "score": 0,
+    "indicators": []
+  },
+  "candidate_attack_ids": [],
+  "evidence_lines": [],
+  "next_steps": [
+    "Skip this helper and move to its non-runtime callers.",
+    "Search for functions with Windows API calls, strings, or network/file/registry behavior.",
+    "Export a function that is closer to the real program logic instead of CRT support code."
+  ]
+}
