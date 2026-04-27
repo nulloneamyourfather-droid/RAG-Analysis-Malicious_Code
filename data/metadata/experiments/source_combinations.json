@@ -1,0 +1,89 @@
+{
+  "experiment": "source_combinations",
+  "sample_name": "1.bin",
+  "settings": {
+    "top_k": 3,
+    "function_limit": 5,
+    "backend": "semantic"
+  },
+  "results": [
+    {
+      "label": "attack_only",
+      "function_count": 5,
+      "suspicious_count": 5,
+      "runtime_like_count": 0,
+      "candidate_attack_total": 15,
+      "attack_doc_hit_count": 5,
+      "api_chain_hit_count": 0,
+      "similar_func_hit_count": 0,
+      "avg_candidate_attack_count": 3.0,
+      "avg_evidence_lines": 2.6,
+      "enabled_sources": [
+        "ATTACK"
+      ]
+    },
+    {
+      "label": "api_chain_only",
+      "function_count": 5,
+      "suspicious_count": 1,
+      "runtime_like_count": 0,
+      "candidate_attack_total": 15,
+      "attack_doc_hit_count": 0,
+      "api_chain_hit_count": 5,
+      "similar_func_hit_count": 0,
+      "avg_candidate_attack_count": 3.0,
+      "avg_evidence_lines": 2.6,
+      "enabled_sources": [
+        "API_CHAIN"
+      ]
+    },
+    {
+      "label": "ida_semantic_only",
+      "function_count": 5,
+      "suspicious_count": 0,
+      "runtime_like_count": 0,
+      "candidate_attack_total": 0,
+      "attack_doc_hit_count": 0,
+      "api_chain_hit_count": 0,
+      "similar_func_hit_count": 5,
+      "avg_candidate_attack_count": 0.0,
+      "avg_evidence_lines": 2.6,
+      "enabled_sources": [
+        "IDA_SEMANTIC"
+      ]
+    },
+    {
+      "label": "attack_api_chain",
+      "function_count": 5,
+      "suspicious_count": 5,
+      "runtime_like_count": 0,
+      "candidate_attack_total": 30,
+      "attack_doc_hit_count": 5,
+      "api_chain_hit_count": 5,
+      "similar_func_hit_count": 0,
+      "avg_candidate_attack_count": 6.0,
+      "avg_evidence_lines": 3.6,
+      "enabled_sources": [
+        "ATTACK",
+        "API_CHAIN"
+      ]
+    },
+    {
+      "label": "all_sources",
+      "function_count": 5,
+      "suspicious_count": 5,
+      "runtime_like_count": 0,
+      "candidate_attack_total": 30,
+      "attack_doc_hit_count": 5,
+      "api_chain_hit_count": 5,
+      "similar_func_hit_count": 5,
+      "avg_candidate_attack_count": 6.0,
+      "avg_evidence_lines": 4.6,
+      "enabled_sources": [
+        "ATTACK",
+        "API_CHAIN",
+        "IDA_SEMANTIC"
+      ]
+    }
+  ]
+}
