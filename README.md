@@ -6,7 +6,6 @@
 
 - [attck_knowledge/README.md](/d:/Graduation%20project/Midterm/asm/attck_knowledge/README.md)
 - [attck_knowledge/docs/design/TECHNICAL_ROUTE_SYSTEM_DESIGN.md](/d:/Graduation%20project/Midterm/asm/attck_knowledge/docs/design/TECHNICAL_ROUTE_SYSTEM_DESIGN.md)
-- [attck_knowledge/docs/thesis/CHAPTER6_EXPERIMENT_RESULTS_DRAFT.md](/d:/Graduation%20project/Midterm/asm/attck_knowledge/docs/thesis/CHAPTER6_EXPERIMENT_RESULTS_DRAFT.md)
 
 ## Keep
 
@@ -41,7 +40,4 @@
   - [run_sample_pipeline.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/run_sample_pipeline.py)
 - 实验脚本：
   - [experiment_runner.py](/d:/Graduation%20project/Midterm/asm/attck_knowledge/experiment_runner.py)
-- 论文材料：
-  - [attck_knowledge/docs/thesis](/d:/Graduation%20project/Midterm/asm/attck_knowledge/docs/thesis)
-- 清理脚本：
-  - [attck_knowledge/tools/cleanup_locked_legacy.ps1](/d:/Graduation%20project/Midterm/asm/attck_knowledge/tools/cleanup_locked_legacy.ps1)
+
