@@ -1,0 +1,589 @@
+[
+  {
+    "chain_id": "chain::004",
+    "title": "registry_modification / execution_loader",
+    "stage_name": "持久化链",
+    "display_name": "持久化链",
+    "confidence": "high",
+    "malicious_function_count": 6,
+    "capabilities": [
+      "registry_modification",
+      "execution_loader"
+    ],
+    "attack_ids": [
+      "T1001",
+      "T1001.001",
+      "T1001.002"
+    ],
+    "function_count": 6,
+    "summary": "该链当前被归纳为“持久化链”，对应的行为阶段为“持久化链”，当前置信度为 high。它主要围绕 注册表修改、执行与装载 展开，关联函数包括 sub_24582C4, sub_24579BC, sub_24596E8, sub_2459780，当前 ATT&CK 候选为 T1001、T1001.001、T1001.002。",
+    "evidence_explanation": [
+      "多个函数共享能力标签：注册表修改、执行与装载。",
+      "链内函数聚合出相同或相近的 ATT&CK 候选：T1001、T1001.001、T1001.002。",
+      "链内函数出现了可相互印证的 API 调用：RegOpenKeyExW, RegCreateKeyW, RegSetValueExA, RegCloseKey, LoadLibraryA, GetProcAddress。",
+      "这些函数在调用关系或命名模式上可形成聚合：sub_24582C4 -> sub_24579BC -> sub_24596E8 -> sub_2459780。",
+      "链内存在较高信号函数：sub_24582C4, sub_24579BC, sub_24596E8, sub_2459780。"
+    ],
+    "functions": [
+      {
+        "function_name": "sub_24582C4",
+        "function_addr": "0x24582c4",
+        "signal": 17,
+        "capabilities": [
+          "registry_modification",
+          "execution_loader"
+        ],
+        "api_calls": [
+          "RegOpenKeyExW",
+          "RegCreateKeyW",
+          "RegSetValueExA",
+          "RegCloseKey",
+          "LoadLibraryA",
+          "GetProcAddress",
+          "lstrcatW"
+        ]
+      },
+      {
+        "function_name": "sub_24579BC",
+        "function_addr": "0x24579bc",
+        "signal": 9,
+        "capabilities": [
+          "execution_loader"
+        ],
+        "api_calls": [
+          "LoadLibraryA",
+          "lstrcatA",
+          "LoadLibraryExA",
+          "GetProcAddress"
+        ]
+      },
+      {
+        "function_name": "sub_24596E8",
+        "function_addr": "0x24596e8",
+        "signal": 9,
+        "capabilities": [
+          "registry_modification"
+        ],
+        "api_calls": [
+          "RegCreateKeyExW",
+          "RegSetValueExW",
+          "RegCloseKey"
+        ]
+      },
+      {
+        "function_name": "sub_2459780",
+        "function_addr": "0x2459780",
+        "signal": 9,
+        "capabilities": [
+          "registry_modification"
+        ],
+        "api_calls": [
+          "RegCreateKeyExW",
+          "RegSetValueExW",
+          "RegCloseKey"
+        ]
+      },
+      {
+        "function_name": "sub_2457AB8",
+        "function_addr": "0x2457ab8",
+        "signal": 6,
+        "capabilities": [
+          "registry_modification"
+        ],
+        "api_calls": [
+          "RegOpenKeyExA",
+          "RegQueryValueExA",
+          "RegCloseKey"
+        ]
+      },
+      {
+        "function_name": "sub_24595C8",
+        "function_addr": "0x24595c8",
+        "signal": 6,
+        "capabilities": [
+          "execution_loader"
+        ],
+        "api_calls": [
+          "LoadLibraryA",
+          "GetProcAddress",
+          "lstrcatW"
+        ]
+      }
+    ]
+  },
+  {
+    "chain_id": "chain::006",
+    "title": "process_injection",
+    "stage_name": "进程注入链",
+    "display_name": "进程注入链",
+    "confidence": "high",
+    "malicious_function_count": 2,
+    "capabilities": [
+      "process_injection"
+    ],
+    "attack_ids": [
+      "T1055",
+      "T1001",
+      "T1001.001",
+      "T1001.002"
+    ],
+    "function_count": 2,
+    "summary": "该链当前被归纳为“进程注入链”，对应的行为阶段为“进程注入链”，当前置信度为 high。它主要围绕 进程注入 展开，关联函数包括 sub_245859C, sub_24594D4，当前 ATT&CK 候选为 T1055、T1001、T1001.001。",
+    "evidence_explanation": [
+      "多个函数共享能力标签：进程注入。",
+      "链内函数聚合出相同或相近的 ATT&CK 候选：T1055、T1001、T1001.001、T1001.002。",
+      "链内函数出现了可相互印证的 API 调用：CreateToolhelp32Snapshot, Process32FirstW, Process32NextW, OpenProcess, K32GetModuleFileNameExA, CloseHandle。",
+      "这些函数在调用关系或命名模式上可形成聚合：sub_245859C -> sub_24594D4。",
+      "链内存在较高信号函数：sub_245859C, sub_24594D4。"
+    ],
+    "functions": [
+      {
+        "function_name": "sub_245859C",
+        "function_addr": "0x245859c",
+        "signal": 12,
+        "capabilities": [
+          "process_injection"
+        ],
+        "api_calls": [
+          "CreateToolhelp32Snapshot",
+          "Process32FirstW",
+          "Process32NextW",
+          "OpenProcess",
+          "K32GetModuleFileNameExA",
+          "CloseHandle"
+        ]
+      },
+      {
+        "function_name": "sub_24594D4",
+        "function_addr": "0x24594d4",
+        "signal": 12,
+        "capabilities": [
+          "process_injection"
+        ],
+        "api_calls": [
+          "CreateToolhelp32Snapshot",
+          "Process32FirstW",
+          "Process32NextW",
+          "OpenProcess",
+          "TerminateProcess",
+          "CloseHandle"
+        ]
+      }
+    ]
+  },
+  {
+    "chain_id": "chain::001",
+    "title": "generic_behavior_cluster",
+    "stage_name": "通用行为链",
+    "display_name": "ATT&CK T1001 相关链",
+    "confidence": "high",
+    "malicious_function_count": 1,
+    "capabilities": [],
+    "attack_ids": [
+      "T1001",
+      "T1001.001",
+      "T1001.002"
+    ],
+    "function_count": 1,
+    "summary": "该链当前被归纳为“ATT&CK T1001 相关链”，对应的行为阶段为“通用行为链”，当前置信度为 high。它主要围绕 通用行为 展开，关联函数包括 sub_2454D7C，当前 ATT&CK 候选为 T1001、T1001.001、T1001.002。",
+    "evidence_explanation": [
+      "链内函数聚合出相同或相近的 ATT&CK 候选：T1001、T1001.001、T1001.002。",
+      "链内函数出现了可相互印证的 API 调用：VariantInit, WideCharToMultiByte, VariantClear。",
+      "链内存在较高信号函数：sub_2454D7C。"
+    ],
+    "functions": [
+      {
+        "function_name": "sub_2454D7C",
+        "function_addr": "0x2454d7c",
+        "signal": 8,
+        "capabilities": [],
+        "api_calls": [
+          "VariantInit",
+          "WideCharToMultiByte",
+          "VariantClear"
+        ]
+      }
+    ]
+  },
+  {
+    "chain_id": "chain::002",
+    "title": "generic_behavior_cluster",
+    "stage_name": "通用行为链",
+    "display_name": "ATT&CK T1001 相关链",
+    "confidence": "high",
+    "malicious_function_count": 1,
+    "capabilities": [],
+    "attack_ids": [
+      "T1001",
+      "T1001.001",
+      "T1001.002"
+    ],
+    "function_count": 1,
+    "summary": "该链当前被归纳为“ATT&CK T1001 相关链”，对应的行为阶段为“通用行为链”，当前置信度为 high。它主要围绕 通用行为 展开，关联函数包括 sub_2455800，当前 ATT&CK 候选为 T1001、T1001.001、T1001.002。",
+    "evidence_explanation": [
+      "链内函数聚合出相同或相近的 ATT&CK 候选：T1001、T1001.001、T1001.002。",
+      "链内函数出现了可相互印证的 API 调用：VariantInit, VariantClear, WideCharToMultiByte。",
+      "链内存在较高信号函数：sub_2455800。"
+    ],
+    "functions": [
+      {
+        "function_name": "sub_2455800",
+        "function_addr": "0x2455800",
+        "signal": 8,
+        "capabilities": [],
+        "api_calls": [
+          "VariantInit",
+          "VariantClear",
+          "WideCharToMultiByte"
+        ]
+      }
+    ]
+  },
+  {
+    "chain_id": "chain::003",
+    "title": "generic_behavior_cluster",
+    "stage_name": "通用行为链",
+    "display_name": "ATT&CK T1001 相关链",
+    "confidence": "high",
+    "malicious_function_count": 1,
+    "capabilities": [],
+    "attack_ids": [
+      "T1001",
+      "T1001.001",
+      "T1001.002"
+    ],
+    "function_count": 1,
+    "summary": "该链当前被归纳为“ATT&CK T1001 相关链”，对应的行为阶段为“通用行为链”，当前置信度为 high。它主要围绕 通用行为 展开，关联函数包括 sub_2457260，当前 ATT&CK 候选为 T1001、T1001.001、T1001.002。",
+    "evidence_explanation": [
+      "链内函数聚合出相同或相近的 ATT&CK 候选：T1001、T1001.001、T1001.002。",
+      "链内函数出现了可相互印证的 API 调用：VariantInit, WideCharToMultiByte, VariantClear。",
+      "链内存在较高信号函数：sub_2457260。"
+    ],
+    "functions": [
+      {
+        "function_name": "sub_2457260",
+        "function_addr": "0x2457260",
+        "signal": 6,
+        "capabilities": [],
+        "api_calls": [
+          "VariantInit",
+          "WideCharToMultiByte",
+          "VariantClear"
+        ]
+      }
+    ]
+  },
+  {
+    "chain_id": "chain::005",
+    "title": "generic_behavior_cluster",
+    "stage_name": "通用行为链",
+    "display_name": "ATT&CK T1001 相关链",
+    "confidence": "high",
+    "malicious_function_count": 1,
+    "capabilities": [],
+    "attack_ids": [
+      "T1001",
+      "T1001.001",
+      "T1001.002"
+    ],
+    "function_count": 1,
+    "summary": "该链当前被归纳为“ATT&CK T1001 相关链”，对应的行为阶段为“通用行为链”，当前置信度为 high。它主要围绕 通用行为 展开，关联函数包括 sub_2457F64，当前 ATT&CK 候选为 T1001、T1001.001、T1001.002。",
+    "evidence_explanation": [
+      "链内函数聚合出相同或相近的 ATT&CK 候选：T1001、T1001.001、T1001.002。",
+      "链内函数出现了可相互印证的 API 调用：FindResourceA, SizeofResource, LoadResource, LockResource。",
+      "链内存在较高信号函数：sub_2457F64。"
+    ],
+    "functions": [
+      {
+        "function_name": "sub_2457F64",
+        "function_addr": "0x2457f64",
+        "signal": 8,
+        "capabilities": [],
+        "api_calls": [
+          "FindResourceA",
+          "SizeofResource",
+          "LoadResource",
+          "LockResource"
+        ]
+      }
+    ]
+  },
+  {
+    "chain_id": "chain::007",
+    "title": "generic_behavior_cluster",
+    "stage_name": "通用行为链",
+    "display_name": "ATT&CK T1001 相关链",
+    "confidence": "high",
+    "malicious_function_count": 1,
+    "capabilities": [],
+    "attack_ids": [
+      "T1001",
+      "T1001.001",
+      "T1001.002"
+    ],
+    "function_count": 1,
+    "summary": "该链当前被归纳为“ATT&CK T1001 相关链”，对应的行为阶段为“通用行为链”，当前置信度为 high。它主要围绕 通用行为 展开，关联函数包括 sub_24587A8，当前 ATT&CK 候选为 T1001、T1001.001、T1001.002。",
+    "evidence_explanation": [
+      "链内函数聚合出相同或相近的 ATT&CK 候选：T1001、T1001.001、T1001.002。",
+      "链内函数出现了可相互印证的 API 调用：CreateToolhelp32Snapshot, Process32FirstW, Process32NextW。",
+      "链内存在较高信号函数：sub_24587A8。"
+    ],
+    "functions": [
+      {
+        "function_name": "sub_24587A8",
+        "function_addr": "0x24587a8",
+        "signal": 6,
+        "capabilities": [],
+        "api_calls": [
+          "CreateToolhelp32Snapshot",
+          "Process32FirstW",
+          "Process32NextW"
+        ]
+      }
+    ]
+  },
+  {
+    "chain_id": "chain::008",
+    "title": "generic_behavior_cluster",
+    "stage_name": "通用行为链",
+    "display_name": "ATT&CK T1001 相关链",
+    "confidence": "high",
+    "malicious_function_count": 1,
+    "capabilities": [],
+    "attack_ids": [
+      "T1001",
+      "T1001.001",
+      "T1001.002"
+    ],
+    "function_count": 1,
+    "summary": "该链当前被归纳为“ATT&CK T1001 相关链”，对应的行为阶段为“通用行为链”，当前置信度为 high。它主要围绕 通用行为 展开，关联函数包括 sub_2458D64，当前 ATT&CK 候选为 T1001、T1001.001、T1001.002。",
+    "evidence_explanation": [
+      "链内函数聚合出相同或相近的 ATT&CK 候选：T1001、T1001.001、T1001.002。",
+      "链内函数出现了可相互印证的 API 调用：CoInitializeEx, CoInitializeSecurity, CoUninitialize, WideCharToMultiByte, Sleep。",
+      "链内存在较高信号函数：sub_2458D64。"
+    ],
+    "functions": [
+      {
+        "function_name": "sub_2458D64",
+        "function_addr": "0x2458d64",
+        "signal": 10,
+        "capabilities": [],
+        "api_calls": [
+          "CoInitializeEx",
+          "CoInitializeSecurity",
+          "CoUninitialize",
+          "WideCharToMultiByte",
+          "Sleep"
+        ]
+      }
+    ]
+  },
+  {
+    "chain_id": "chain::009",
+    "title": "generic_behavior_cluster",
+    "stage_name": "通用行为链",
+    "display_name": "ATT&CK T1001 相关链",
+    "confidence": "high",
+    "malicious_function_count": 1,
+    "capabilities": [],
+    "attack_ids": [
+      "T1001",
+      "T1001.001",
+      "T1001.002"
+    ],
+    "function_count": 1,
+    "summary": "该链当前被归纳为“ATT&CK T1001 相关链”，对应的行为阶段为“通用行为链”，当前置信度为 high。它主要围绕 通用行为 展开，关联函数包括 nishishabi，当前 ATT&CK 候选为 T1001、T1001.001、T1001.002。",
+    "evidence_explanation": [
+      "链内函数聚合出相同或相近的 ATT&CK 候选：T1001、T1001.001、T1001.002。",
+      "链内函数出现了可相互印证的 API 调用：SetFileAttributesA, GetLastError, Sleep, CloseHandle, DeleteFileA。",
+      "链内存在较高信号函数：nishishabi。"
+    ],
+    "functions": [
+      {
+        "function_name": "nishishabi",
+        "function_addr": "0x245d864",
+        "signal": 10,
+        "capabilities": [],
+        "api_calls": [
+          "SetFileAttributesA",
+          "GetLastError",
+          "Sleep",
+          "CloseHandle",
+          "DeleteFileA"
+        ]
+      }
+    ]
+  },
+  {
+    "chain_id": "chain::010",
+    "title": "generic_behavior_cluster",
+    "stage_name": "通用行为链",
+    "display_name": "ATT&CK T1001 相关链",
+    "confidence": "high",
+    "malicious_function_count": 1,
+    "capabilities": [],
+    "attack_ids": [
+      "T1001",
+      "T1001.001",
+      "T1001.002"
+    ],
+    "function_count": 1,
+    "summary": "该链当前被归纳为“ATT&CK T1001 相关链”，对应的行为阶段为“通用行为链”，当前置信度为 high。它主要围绕 通用行为 展开，关联函数包括 __crtLCMapStringA，当前 ATT&CK 候选为 T1001、T1001.001、T1001.002。",
+    "evidence_explanation": [
+      "链内函数聚合出相同或相近的 ATT&CK 候选：T1001、T1001.001、T1001.002。",
+      "链内函数出现了可相互印证的 API 调用：MultiByteToWideChar, LCMapStringEx, WideCharToMultiByte。",
+      "链内存在较高信号函数：__crtLCMapStringA。"
+    ],
+    "functions": [
+      {
+        "function_name": "__crtLCMapStringA",
+        "function_addr": "0x24607bc",
+        "signal": 6,
+        "capabilities": [],
+        "api_calls": [
+          "MultiByteToWideChar",
+          "LCMapStringEx",
+          "WideCharToMultiByte"
+        ]
+      }
+    ]
+  },
+  {
+    "chain_id": "chain::011",
+    "title": "generic_behavior_cluster",
+    "stage_name": "通用行为链",
+    "display_name": "ATT&CK T1001 相关链",
+    "confidence": "high",
+    "malicious_function_count": 1,
+    "capabilities": [],
+    "attack_ids": [
+      "T1001",
+      "T1001.001",
+      "T1001.002"
+    ],
+    "function_count": 1,
+    "summary": "该链当前被归纳为“ATT&CK T1001 相关链”，对应的行为阶段为“通用行为链”，当前置信度为 high。它主要围绕 通用行为 展开，关联函数包括 sub_2460AD0，当前 ATT&CK 候选为 T1001、T1001.001、T1001.002。",
+    "evidence_explanation": [
+      "链内函数聚合出相同或相近的 ATT&CK 候选：T1001、T1001.001、T1001.002。",
+      "链内函数出现了可相互印证的 API 调用：MultiByteToWideChar, GetLastError, SysAllocString。",
+      "链内存在较高信号函数：sub_2460AD0。"
+    ],
+    "functions": [
+      {
+        "function_name": "sub_2460AD0",
+        "function_addr": "0x2460ad0",
+        "signal": 6,
+        "capabilities": [],
+        "api_calls": [
+          "MultiByteToWideChar",
+          "GetLastError",
+          "SysAllocString"
+        ]
+      }
+    ]
+  },
+  {
+    "chain_id": "chain::012",
+    "title": "generic_behavior_cluster",
+    "stage_name": "通用行为链",
+    "display_name": "ATT&CK T1001 相关链",
+    "confidence": "high",
+    "malicious_function_count": 1,
+    "capabilities": [],
+    "attack_ids": [
+      "T1001",
+      "T1001.001",
+      "T1001.002"
+    ],
+    "function_count": 1,
+    "summary": "该链当前被归纳为“ATT&CK T1001 相关链”，对应的行为阶段为“通用行为链”，当前置信度为 high。它主要围绕 通用行为 展开，关联函数包括 __raise_securityfailure，当前 ATT&CK 候选为 T1001、T1001.001、T1001.002。",
+    "evidence_explanation": [
+      "链内函数聚合出相同或相近的 ATT&CK 候选：T1001、T1001.001、T1001.002。",
+      "链内函数出现了可相互印证的 API 调用：SetUnhandledExceptionFilter, UnhandledExceptionFilter, GetCurrentProcess, TerminateProcess。",
+      "链内存在较高信号函数：__raise_securityfailure。"
+    ],
+    "functions": [
+      {
+        "function_name": "__raise_securityfailure",
+        "function_addr": "0x2461a7c",
+        "signal": 8,
+        "capabilities": [],
+        "api_calls": [
+          "SetUnhandledExceptionFilter",
+          "UnhandledExceptionFilter",
+          "GetCurrentProcess",
+          "TerminateProcess"
+        ]
+      }
+    ]
+  },
+  {
+    "chain_id": "chain::013",
+    "title": "generic_behavior_cluster",
+    "stage_name": "通用行为链",
+    "display_name": "ATT&CK T1001 相关链",
+    "confidence": "high",
+    "malicious_function_count": 1,
+    "capabilities": [],
+    "attack_ids": [
+      "T1001",
+      "T1001.001",
+      "T1001.002"
+    ],
+    "function_count": 1,
+    "summary": "该链当前被归纳为“ATT&CK T1001 相关链”，对应的行为阶段为“通用行为链”，当前置信度为 high。它主要围绕 通用行为 展开，关联函数包括 capture_current_context，当前 ATT&CK 候选为 T1001、T1001.001、T1001.002。",
+    "evidence_explanation": [
+      "链内函数聚合出相同或相近的 ATT&CK 候选：T1001、T1001.001、T1001.002。",
+      "链内函数出现了可相互印证的 API 调用：RtlCaptureContext, RtlLookupFunctionEntry, RtlVirtualUnwind。",
+      "链内存在较高信号函数：capture_current_context。"
+    ],
+    "functions": [
+      {
+        "function_name": "capture_current_context",
+        "function_addr": "0x2461c34",
+        "signal": 6,
+        "capabilities": [],
+        "api_calls": [
+          "RtlCaptureContext",
+          "RtlLookupFunctionEntry",
+          "RtlVirtualUnwind"
+        ]
+      }
+    ]
+  },
+  {
+    "chain_id": "chain::014",
+    "title": "generic_behavior_cluster",
+    "stage_name": "通用行为链",
+    "display_name": "ATT&CK T1001 相关链",
+    "confidence": "high",
+    "malicious_function_count": 1,
+    "capabilities": [],
+    "attack_ids": [
+      "T1001",
+      "T1001.001",
+      "T1001.002"
+    ],
+    "function_count": 1,
+    "summary": "该链当前被归纳为“ATT&CK T1001 相关链”，对应的行为阶段为“通用行为链”，当前置信度为 high。它主要围绕 通用行为 展开，关联函数包括 __security_init_cookie，当前 ATT&CK 候选为 T1001、T1001.001、T1001.002。",
+    "evidence_explanation": [
+      "链内函数聚合出相同或相近的 ATT&CK 候选：T1001、T1001.001、T1001.002。",
+      "链内函数出现了可相互印证的 API 调用：GetSystemTimeAsFileTime, GetCurrentThreadId, GetCurrentProcessId, QueryPerformanceCounter。",
+      "链内存在较高信号函数：__security_init_cookie。"
+    ],
+    "functions": [
+      {
+        "function_name": "__security_init_cookie",
+        "function_addr": "0x2461d18",
+        "signal": 8,
+        "capabilities": [],
+        "api_calls": [
+          "GetSystemTimeAsFileTime",
+          "GetCurrentThreadId",
+          "GetCurrentProcessId",
+          "QueryPerformanceCounter"
+        ]
+      }
+    ]
+  }
+]
